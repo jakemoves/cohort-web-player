@@ -1,22 +1,51 @@
 <script>
-	export let event;
-	import Episode from './Episode.svelte';
+	import Event from './Event.svelte'
 
+	let overhearEvent = {
+		label: "Overhear Solo — Prague",
+		thumbnailImageURL: "https://dummyimage.com/800x600",
+		episodes: [{
+			label: "Somewhere in Prague",
+			thumbnailImageURL: "https://dummyimage.com/120x100",
+			thumbnailImageA11yText: "placeholder image",
+			description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+			number: 1,
+			cues: [{
+				mediaURL: "/media/05 Superstition.m4a"
+			}]
+		},{
+			label: "A different place",
+			thumbnailImageURL: "https://dummyimage.com/120x100",
+			thumbnailImageA11yText: "placeholder image",
+			description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+			number: 2,
+			cues: [{
+				mediaURL: "/media/20 Yr City Is a Sucker (London Session).m4a"
+			}]
+		},{
+			label: "A shorter one",
+			thumbnailImageURL: "https://dummyimage.com/120x100",
+			thumbnailImageA11yText: "placeholder image",
+			description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+			number: 3,
+			cues: [{
+				mediaURL: "/media/L02-the-curtain.m4a"
+			}]
+		}]
+	}
 </script>
 
 <style>
-	h1 {
-		color: blue;
-	}
-
-	img {
-		width: 100%;
-	}
 </style>
 
-<h1>{event.label}</h1>
-<img src={event.thumbnailImageURL} alt="placeholder image">
+<head>
+	<link rel="stylesheet" href="bootstrap/bootstrap.css">
+</head>
 
-{#each event.episodes as episode}
-<Episode {...episode}/>
-{/each}
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<Event event={overhearEvent}/>
+		</div>
+	</div>
+</div>

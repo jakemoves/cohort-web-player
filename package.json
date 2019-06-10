@@ -18,5 +18,8 @@
     "dev": "run-p start:dev autobuild",
     "start": "sirv public",
     "start:dev": "sirv public --dev"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1"
   }
 }

@@ -1,22 +1,37 @@
 <script context="module">
-let currentPlayer // creates a single "global" variable 
+let currentPlayer // creates a single "global" variable for all Episodes
 </script>
 
 <script>
+import { onMount } from 'svelte'
+import { createEventDispatcher } from 'svelte'
+
+export let number, label, thumbnailImageURL, description, thumbnailImageA11yText, cues
+
+const dispatch = createEventDispatcher()
+
 let isPaused = true
+let audioPlayer, playButton
+let audioURL
+
+onMount( () => {
+  if(cues.length == 1 && cues[0].mediaURL){
+    audioURL = cues[0].mediaURL
+  } else {
+    playButton.setProperty('disabled', '')
+  }
+
+  audioPlayer.addEventListener('ended', (event) => {
+    dispatch('message', { text: 'audioEnded'})
+  })
+})
+
+
 $: state = isPaused ? "paused" : "playing"
-
-let audioPlayer
-
-export let number
-export let label
-export let mediaURL
-
 $: episodeHeader = label ? 
   "Episode " + number + ": " + label :
   "Episode " + number 
     
-
 function onBtnPlay() {
   if(currentPlayer && currentPlayer !== audioPlayer) {
     currentPlayer.pause()
@@ -31,16 +46,45 @@ function onBtnPause() {
 }
 </script>
 
-<h2>{episodeHeader}</h2>
+<style>
+h2 {
+  font-size: 1.25rem;
+}
+
+.thumbnail {
+  min-width: 120px;
+  margin-right: 1rem;
+}
+
+</style>
+
+<div class="episode-header d-flex">
+  <img class="thumbnail" width=120 height=100 src={thumbnailImageURL} alt={thumbnailImageA11yText}>
+  <h2 class="title">{episodeHeader}</h2>
+</div>
+
+<p class="description">{description}</p>
+
 {#if isPaused}
-<button on:click={onBtnPlay}>Play</button>
+<button 
+  type="button" 
+  on:click={onBtnPlay} 
+  class="btn btn-outline btn-outline-success btn-block"
+  bind:this={playButton}>
+  Play
+</button>
 {:else}
-<button on:click={onBtnPause}>Pause</button>
+<button 
+  type="button" 
+  on:click={onBtnPause} 
+  class="btn btn-outline btn-outline-warning btn-block">
+  Pause
+</button>
 {/if}
-<span>{state}!</span>
+
 <audio 
   id="ep-{number}-player" 
-  src={mediaURL}
+  src={audioURL}
   bind:paused={isPaused}
   bind:this={audioPlayer}
 ></audio>
