@@ -20,6 +20,8 @@
     "start:dev": "sirv public --dev"
   },
   "dependencies": {
-    "bootstrap": "^4.3.1"
+    "bootstrap": "^4.3.1",
+    "js-cookie": "^2.2.0",
+    "uuid": "^3.3.2"
   }
 }

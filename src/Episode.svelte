@@ -4,25 +4,33 @@ let currentPlayer // creates a single "global" variable for all Episodes
 
 <script>
 import { onMount } from 'svelte'
-import { createEventDispatcher } from 'svelte'
+import { createEventDispatcher } from 'svelte'	
+import { fade } from 'svelte/transition'
 
-export let number, label, thumbnailImageURL, description, thumbnailImageA11yText, storyteller, cues
+export let number, label, thumbnailImageURL, description, thumbnailImageA11yText, storyteller, cues, locationDescription
 
 const dispatch = createEventDispatcher()
 
 let isPaused = true
 let audioPlayer, playButton
-let audioURL
+let currentCue = { mediaURL: ''}
+let showPlayerChoiceUI = false
+let audioPreloadSetting = "none"
 
 onMount( () => {
-  if(cues.length == 1 && cues[0].mediaURL){
-    audioURL = cues[0].mediaURL
+  if(cues.length > 0){
+    currentCue = cues.find( cue => cue.cueNumber == 1)
   } else {
-    playButton.setProperty('disabled', '')
+    playButton.setAttribute('disabled', '')
   }
 
   audioPlayer.addEventListener('ended', (event) => {
-    dispatch('message', { text: 'audioEnded', episode: number})
+    console.log(event)
+    if(currentCue.cueNumber == 1){
+      // present player choice UI
+      showPlayerChoiceUI = true
+    }
+    // dispatch('message', { text: 'audioEnded', episode: number})
   })
 })
 
@@ -31,7 +39,12 @@ $: state = isPaused ? "paused" : "playing"
 $: episodeHeader = label ? 
   "Episode " + number + ": " + label :
   "Episode " + number 
+$: audioURL = currentCue.mediaURL
     
+function playNextCue(event){
+
+}
+
 function onBtnPlay() {
   if(currentPlayer && currentPlayer !== audioPlayer) {
     currentPlayer.pause()
@@ -39,6 +52,16 @@ function onBtnPlay() {
 
   currentPlayer = audioPlayer
   isPaused = false
+}
+
+function onBtnPlayerSelected(event){
+  let player = event.target.dataset.player
+  if(player == "1"){
+    currentCue = cues.find( cue => cue.cueNumber == 2)
+  } else {
+    currentCue = cues.find( cue => cue.cueNumber == 3)
+  }
+  showPlayerChoiceUI = false
 }
 
 function onBtnPause() {
@@ -71,28 +94,39 @@ h2 {
   </div>
 </div>
 
+<p>location: {locationDescription}</p>
 <p class="description">{description}</p>
 
-{#if isPaused}
-<button 
-  type="button" 
-  on:click={onBtnPlay} 
-  class="btn btn-outline btn-outline-success btn-block"
-  bind:this={playButton}>
-  Play
-</button>
+{#if !showPlayerChoiceUI}
+  {#if isPaused}
+    <button 
+      type="button" 
+      on:click={onBtnPlay} 
+      class="btn btn-outline btn-outline-success btn-block"
+      bind:this={playButton}>
+      Play
+    </button>
+  {:else}
+    <button 
+      type="button" 
+      on:click={onBtnPause} 
+      class="btn btn-outline btn-outline-warning btn-block">
+      Pause
+    </button>
+  {/if}
 {:else}
-<button 
-  type="button" 
-  on:click={onBtnPause} 
-  class="btn btn-outline btn-outline-warning btn-block">
-  Pause
-</button>
+  <div class="form-group d-flex justify-content-around" in:fade={{duration: 250}}>
+    <button type="button" class="btn btn-primary" data-player=1 on:click={onBtnPlayerSelected}>Player 1</button>
+    <button type="button" class="btn btn-primary" data-player=2 on:click={onBtnPlayerSelected}>Player 2</button>
+  </div>
 {/if}
+
+
 
 <audio 
   id="ep-{number}-player" 
   src={audioURL}
+  preload={audioPreloadSetting}
   bind:paused={isPaused}
   bind:this={audioPlayer}
 ></audio>

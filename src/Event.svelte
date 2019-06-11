@@ -7,6 +7,7 @@
 
 	let showStorytellerCard = false
 	let selectedStoryteller = event.storytellers[0]
+	let tags = ["all"]
 
 	// DO NOT LET THIS GROW ANY FURTHER
 	function handleMessage(evt) {
