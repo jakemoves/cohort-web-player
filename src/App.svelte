@@ -6,6 +6,7 @@
 		thumbnailImageURL: "https://dummyimage.com/800x600",
 		episodes: [{
 			label: "Somewhere in Prague",
+			storyteller: "Ophelia Coxwell",
 			thumbnailImageURL: "https://dummyimage.com/120x100",
 			thumbnailImageA11yText: "placeholder image",
 			description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
@@ -15,6 +16,7 @@
 			}]
 		},{
 			label: "A different place",
+			storyteller: "Asha Viola",
 			thumbnailImageURL: "https://dummyimage.com/120x100",
 			thumbnailImageA11yText: "placeholder image",
 			description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
@@ -24,6 +26,7 @@
 			}]
 		},{
 			label: "A shorter one",
+			storyteller: "Brooke Lynn Heights",
 			thumbnailImageURL: "https://dummyimage.com/120x100",
 			thumbnailImageA11yText: "placeholder image",
 			description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -31,6 +34,19 @@
 			cues: [{
 				mediaURL: "/media/L02-the-curtain.m4a"
 			}]
+		}],
+		storytellers: [{
+			name: "Ophelia Coxwell",
+			bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+			link: "http://twitter.com"
+		},{
+			name: "Asha Viola",
+			bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+			link: "http://twitter.com"
+		},{
+			name: "Brooke Lynn Heights",
+			bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+			link: "http://twitter.com"
 		}]
 	}
 </script>

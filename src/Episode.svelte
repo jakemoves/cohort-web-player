@@ -6,7 +6,7 @@ let currentPlayer // creates a single "global" variable for all Episodes
 import { onMount } from 'svelte'
 import { createEventDispatcher } from 'svelte'
 
-export let number, label, thumbnailImageURL, description, thumbnailImageA11yText, cues
+export let number, label, thumbnailImageURL, description, thumbnailImageA11yText, storyteller, cues
 
 const dispatch = createEventDispatcher()
 
@@ -22,7 +22,7 @@ onMount( () => {
   }
 
   audioPlayer.addEventListener('ended', (event) => {
-    dispatch('message', { text: 'audioEnded'})
+    dispatch('message', { text: 'audioEnded', episode: number})
   })
 })
 
@@ -44,6 +44,11 @@ function onBtnPlay() {
 function onBtnPause() {
   isPaused = true
 }
+
+function showStorytellerCard(event) {
+  event.pre
+  dispatch('message', { text: 'showStorytellerCard', storyteller: storyteller})
+}
 </script>
 
 <style>
@@ -60,7 +65,10 @@ h2 {
 
 <div class="episode-header d-flex">
   <img class="thumbnail" width=120 height=100 src={thumbnailImageURL} alt={thumbnailImageA11yText}>
-  <h2 class="title">{episodeHeader}</h2>
+  <div>
+    <h2 class="title">{episodeHeader}</h2>
+    <p>told by: <a href="#" on:click|preventDefault={showStorytellerCard}>{storyteller}</a></p>
+  </div>
 </div>
 
 <p class="description">{description}</p>
