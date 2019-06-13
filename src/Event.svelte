@@ -36,7 +36,9 @@
 
 <style>
 h1 {
-	font-size: 1.5rem;
+	font-size: 1rem;
+	text-transform:uppercase;
+	font-variant: small-caps;
 }
 
 .episode-container {
@@ -53,7 +55,12 @@ h1 {
 
 </style>
 <h1>{event.label}</h1>
-<img src={event.thumbnailImageURL} alt="placeholder image" class="img-fluid">
+{#if event.thumbnailImageURL}
+	<img src={event.thumbnailImageURL} alt="placeholder image" class="img-fluid">
+{/if}
+{#if event.subLabel}
+	<h2>{@html event.subLabel}</h2>
+{/if}
 
 {#each event.episodes as episode}
 <div class="episode-container">

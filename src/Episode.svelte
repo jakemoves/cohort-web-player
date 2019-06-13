@@ -7,7 +7,7 @@ import { onMount } from 'svelte'
 import { createEventDispatcher } from 'svelte'	
 import { fade } from 'svelte/transition'
 
-export let number, label, thumbnailImageURL, description, thumbnailImageA11yText, storyteller, cues, locationDescription
+export let number, label, thumbnailImageURL, description, contentWarning, thumbnailImageA11yText, storyteller, cues, locationDescription
 
 const dispatch = createEventDispatcher()
 
@@ -36,9 +36,7 @@ onMount( () => {
 
 
 $: state = isPaused ? "paused" : "playing"
-$: episodeHeader = label ? 
-  "Episode " + number + ": " + label :
-  "Episode " + number 
+$: episodeHeader = label ? label : "Episode " + number 
 $: audioURL = currentCue.mediaURL
     
 function playNextCue(event){
@@ -61,6 +59,7 @@ function onBtnPlayerSelected(event){
   } else {
     currentCue = cues.find( cue => cue.cueNumber == 3)
   }
+  audioPreloadSetting = "auto"
   showPlayerChoiceUI = false
 }
 
@@ -93,9 +92,14 @@ h2 {
     <p>told by: <a href="#" on:click|preventDefault={showStorytellerCard}>{storyteller}</a></p>
   </div>
 </div>
-
-<p>location: {locationDescription}</p>
+{#if locationDescription}
+  <p>location: {locationDescription}</p>
+{/if}
 <p class="description">{description}</p>
+{#if contentWarning}
+  <p>{contentWarning}</p>
+{/if}
+
 
 {#if !showPlayerChoiceUI}
   {#if isPaused}
