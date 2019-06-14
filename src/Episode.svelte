@@ -12,10 +12,12 @@ export let number, label, thumbnailImageURL, description, contentWarning, thumbn
 const dispatch = createEventDispatcher()
 
 let isPaused = true
+let isLoaded
 let audioPlayer, playButton
 let currentCue = { mediaURL: ''}
 let showPlayerChoiceUI = false
 let audioPreloadSetting = "none"
+let audioDuration
 
 onMount( () => {
   if(cues.length > 0){
@@ -38,6 +40,8 @@ onMount( () => {
 $: state = isPaused ? "paused" : "playing"
 $: episodeHeader = label ? label : "Episode " + number 
 $: audioURL = currentCue.mediaURL
+$: isLoaded = (audioDuration !== undefined && !isNaN(audioDuration)) ? true : false
+$: if(isLoaded){ console.log("audio loaded: " + audioDuration) }
     
 function playNextCue(event){
 
@@ -122,7 +126,7 @@ h2 {
       type="button" 
       on:click={onBtnPause} 
       class="btn btn-outline btn-outline-warning btn-block">
-      Pause
+      {#if isLoaded}Pause{:else}Loading{/if}
     </button>
   {/if}
 {:else}
@@ -138,4 +142,5 @@ h2 {
   preload={audioPreloadSetting}
   bind:paused={isPaused}
   bind:this={audioPlayer}
+  bind:duration={audioDuration}
 ></audio>
