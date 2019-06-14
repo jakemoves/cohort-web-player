@@ -42,15 +42,11 @@ h1 {
 }
 
 .episode-container {
-	margin-top: 1rem;
+	margin: 2rem 0;
 }
 
 .episode-container:last-child {
 	margin-bottom: 40px;
-}
-
-.card-container {
-	margin: 1rem;
 }
 
 </style>
@@ -62,14 +58,16 @@ h1 {
 	<h2>{@html event.subLabel}</h2>
 {/if}
 
+{#if !showStorytellerCard}
 {#each event.episodes as episode}
 <div class="episode-container">
 	<Episode {...episode} on:message={handleMessage}/>
 </div>
 {/each}
+{/if}
 
 {#if showStorytellerCard}
-<div class="card-container fixed-bottom" transition:slide={{y: 600, duration: 300}}>
+<div class="card-container">
 	<StorytellerCard storyteller={selectedStoryteller} on:message={handleMessage}/>
 </div>
 {/if}

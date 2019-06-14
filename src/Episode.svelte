@@ -26,7 +26,7 @@ onMount( () => {
 
   audioPlayer.addEventListener('ended', (event) => {
     console.log(event)
-    if(currentCue.cueNumber == 1){
+    if(currentCue.cueNumber == 1 && cues.length > 1){
       // present player choice UI
       showPlayerChoiceUI = true
     }
@@ -86,20 +86,27 @@ h2 {
 </style>
 
 <div class="episode-header d-flex">
+  {#if thumbnailImageURL}
   <img class="thumbnail" width=120 height=100 src={thumbnailImageURL} alt={thumbnailImageA11yText}>
+  {/if}
+
   <div>
     <h2 class="title">{episodeHeader}</h2>
+    {#if storyteller}
     <p>told by: <a href="#" on:click|preventDefault={showStorytellerCard}>{storyteller}</a></p>
+    {/if}
   </div>
 </div>
+
 {#if locationDescription}
-  <p>location: {locationDescription}</p>
-{/if}
-<p class="description">{description}</p>
-{#if contentWarning}
-  <p>{contentWarning}</p>
+<p>location: {locationDescription}</p>
 {/if}
 
+<p class="description">{description}</p>
+
+{#if contentWarning}
+<p>{contentWarning}</p>
+{/if}
 
 {#if !showPlayerChoiceUI}
   {#if isPaused}
@@ -124,8 +131,6 @@ h2 {
     <button type="button" class="btn btn-primary" data-player=2 on:click={onBtnPlayerSelected}>Player 2</button>
   </div>
 {/if}
-
-
 
 <audio 
   id="ep-{number}-player" 

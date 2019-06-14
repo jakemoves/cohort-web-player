@@ -8,27 +8,35 @@
 		label: "Overhear Solo",
 		subLabel: "<em>BODIES: Love / Sex / Survival (Prague Quadrennial 2019)</em>",
 		episodes: [{
+			label: "Tutorial",
+			description: "Tutorial description goes here...",
+			cues: [{
+				cueNumber: 1,
+				mediaURL: "media/Tutorial_Narration.mp3"
+			}]
+		},{
 			label: "Mystery Boy",
 			storyteller: "Braden Butler",
 			thumbnailImageURL: "https://dummyimage.com/120x100",
 			thumbnailImageA11yText: "placeholder image",
+			locationDescription: "A small cafe with a table for two near a window or on a patio",
 			description: "A young boy makes his first encounter with the carnage of love.",
 			contentWarning: "Content warning: sexual content",
 			number: 1,
 			cues: [{
 				cueNumber: 1,
-				mediaURL: "media/L02-the-curtain.m4a"
+				mediaURL: "media/Mystery_Boy_Story_Intro.mp3"
 			},{
 				cueNumber: 2,
-				mediaURL: "media/05Superstition.m4a"
+				mediaURL: "media/Mystery_Boy_Player_1.mp3"
 			},{
 				cueNumber: 3,
-				mediaURL: "media/YrCitysASucker.m4a"
+				mediaURL: "media/Mystery_Boy_Player_2.mp3"
 			}]
 		},{
-			label: "That Thing Behind Glass",
+			label: "That Thing Behind Glasses",
 			storyteller: "Andrea Folster",
-			locationDescription: "Sagittis id consectetur purus ut faucibus pulvinar elementum integer enim neque volutpat ac tincidunt vitae semper quis lectus nulla at.",
+			locationDescription: "A place to sit facing an apartment or condo nice enough that you could see yourself living in it (ideally with a balcony)",
 			thumbnailImageURL: "https://dummyimage.com/120x100",
 			thumbnailImageA11yText: "placeholder image",
 			description: "An internal monologue of an awkward Tinder date, navigating the line between safety and satisfaction.",
@@ -36,18 +44,18 @@
 			number: 2,
 			cues: [{
 				cueNumber: 1,
-				mediaURL: "media/L02-the-curtain.m4a"
+				mediaURL: "media/That_Thing_Behind_Glasses_Story_Intro.mp3"
 			},{
 				cueNumber: 2,
-				mediaURL: "media/L02-the-curtain.m4a"
+				mediaURL: "media/That_Thing_Behind_Glasses_Player_1__2.mp3"
 			},{
 				cueNumber: 3,
-				mediaURL: "media/L02-the-curtain.m4a"
+				mediaURL: "media/That_Thing_Behind_Glasses_Player_1__2.mp3"
 			}]
 		},{
 			label: "Fear on Foot",
 			storyteller: "Elise Pallagi",
-			locationDescription: "Sagittis id consectetur purus ut faucibus pulvinar elementum integer.",
+			locationDescription: "Any long and winding urban alleyway",
 			thumbnailImageURL: "https://dummyimage.com/120x100",
 			thumbnailImageA11yText: "placeholder image",
 			description: "An examination of street harassment faced by women, queer and gender non conforming people. ",
@@ -55,55 +63,55 @@
 			number: 3,
 			cues: [{
 				cueNumber: 1,
-				mediaURL: "media/L02-the-curtain.m4a"
+				mediaURL: "media/Fear_on_Foot_Story_Intro.mp3"
 			},{
 				cueNumber: 2,
-				mediaURL: "media/L02-the-curtain.m4a"
+				mediaURL: "media/Fear_on_Foot_Player_1__2.mp3"
 			},{
 				cueNumber: 3,
-				mediaURL: "media/L02-the-curtain.m4a"
+				mediaURL: "media/Fear_on_Foot_Player_1__2.mp3"
 			}]
 		},{
 			label: "Take This Body",
 			storyteller: "Shanda Stefanson",
-			locationDescription: "Sagittis id consectetur purus ut faucibus pulvinar elementum integer.",
+			locationDescription: "Any patio table",
 			thumbnailImageURL: "https://dummyimage.com/120x100",
 			thumbnailImageA11yText: "placeholder image",
 			description: "An invitation to explore someone’s body and its history through poetry and interactive paper craft.",
 			number: 3,
 			cues: [{
 				cueNumber: 1,
-				mediaURL: "media/L02-the-curtain.m4a"
+				mediaURL: "media/Take_This_Body_Story_Intro.mp3"
 			},{
 				cueNumber: 2,
-				mediaURL: "media/L02-the-curtain.m4a"
+				mediaURL: "media/Take_This_Body_Player_1__2.mp3"
 			},{
 				cueNumber: 3,
-				mediaURL: "media/L02-the-curtain.m4a"
+				mediaURL: "media/Take_This_Body_Player_1__2.mp3"
 			}]
 		},{
 			label: "A Path in the Dark",
 			storyteller: "Amberlin Hsu",
-			locationDescription: "Sagittis id consectetur purus ut faucibus pulvinar elementum integer.",
+			locationDescription: "Any park with a path that forks into two",
 			thumbnailImageURL: "https://dummyimage.com/120x100",
 			thumbnailImageA11yText: "placeholder image",
 			description: "Which path is safest when your love is dangerous and your home won’t protect you?",
 			number: 3,
 			cues: [{
 				cueNumber: 1,
-				mediaURL: "media/L02-the-curtain.m4a"
+				mediaURL: "media/Paths_in_the_Dark_Story_Intro.mp3"
 			},{
 				cueNumber: 2,
-				mediaURL: "media/L02-the-curtain.m4a"
+				mediaURL: "media/Paths_in_the_Dark_Player_1__2.mp3"
 			},{
 				cueNumber: 3,
-				mediaURL: "media/L02-the-curtain.m4a"
+				mediaURL: "media/Paths_in_the_Dark_Player_1__2.mp3"
 			}]
 		}],
 		storytellers: [{
 			name: "Braden Butler",
 			thumbnailImageURL: "media/braden-butler.jpg",
-			bio: "Braden Butler was born and raised in Saskatoon, SK, Canada and moved to Edmonton, AB in the fall of 2017 to pursue a BFA in Acting at the University of Alberta. Recent theatre credits include <em>Wild Abandon</em> (Tough Choice Productions), The Gooseberry (Moplip Theatre/NextFest), Ahunwar: The Devil’s Long Nap (Night Canopy Theatre/2018 Edmonton Fringe), and The Hot l Baltimore, The Misfit Vault, An Evening with Anon Chekhov, Midsummer Night’s Dream (University of Alberta). He can be seen next (in Canada!) playing the role of Ken in John Logan’s RED at the 2019 Edmonton Fringe and in his first graduating year production as Buckingham in Richard III. He is thrilled to be a part of the creative ensemble with Overhear and for his work to be shared for the first time overseas. ",
+			bio: "Braden Butler was born and raised in Saskatoon, SK, Canada and moved to Edmonton, AB in the fall of 2017 to pursue a BFA in Acting at the University of Alberta. Recent theatre credits include <em>Wild Abandon</em> (Tough Choice Productions), <em>The Gooseberry</em> (Moplip Theatre/NextFest), <em>Ahunwar: The Devil’s Long Nap</em> (Night Canopy Theatre/2018 Edmonton Fringe), and <em>The Hot Baltimore</em>, The Misfit Vault, An Evening with Anon Chekhov, Midsummer Night’s Dream</em> (University of Alberta). He can be seen next (in Canada!) playing the role of Ken in John Logan’s <em>RED</em> at the 2019 Edmonton Fringe and in his first graduating year production as Buckingham in <em>Richard III</em>. He is thrilled to be a part of the creative ensemble with Overhear and for his work to be shared for the first time overseas. ",
 			links: [ 
 				"http://paypal.me/bradeninspace",
 				"http://instagram.com/bradeninspace"
@@ -117,7 +125,8 @@
 			links: [
 				"http://elisepallagi.com",
 				"http://instagram.com/kandilonglegz",
-				"http://facebook.com/elisepallagispokenword"
+				"http://facebook.com/elisepallagispokenword",
+				"http://paypal.me/elisepallagi"
 			]
 		},{
 			name: "Shanda Stefanson",

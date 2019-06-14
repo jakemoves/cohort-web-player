@@ -10,6 +10,14 @@ function onBtnBack(){
 }
 </script>
 
+<style>
+p {
+  font-size: 0.75rem;
+  line-height: 1.3em;
+}
+
+</style>
+
 <div class="card">
   <img src="https://dummyimage.com/640x480" class="card-img-top" alt="placeholder image">
   <div class="card-body">
