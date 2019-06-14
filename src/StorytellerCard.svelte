@@ -26,7 +26,7 @@ p {
     {#if storyteller.links}
       {#each storyteller.links as link}
         <br/>
-        <a href="{link}">{link}</a>
+        <a href="{link}" target="_blank">{link}</a>
       {/each}
     {/if}
     </p>

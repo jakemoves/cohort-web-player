@@ -6,10 +6,10 @@
 
 	let overhearEvent = {
 		label: "Overhear Solo",
-		subLabel: "<em>BODIES: Love / Sex / Survival (Prague Quadrennial 2019)</em>",
+		subLabel: "<em>BODIES<br />Love / Sex / Survival<br /><span class='small'>(Prague Quadrennial 2019)</span></em>",
 		episodes: [{
 			label: "Tutorial",
-			description: "Tutorial description goes here...",
+			description: "If this is your first time with Overhear Solo, please listen to this tutorial. These are interactive stories in which you will may cast yourself in roles with special tasks.",
 			cues: [{
 				cueNumber: 1,
 				mediaURL: "media/Tutorial_Narration.mp3"
@@ -20,6 +20,7 @@
 			thumbnailImageURL: "https://dummyimage.com/120x100",
 			thumbnailImageA11yText: "placeholder image",
 			locationDescription: "A small cafe with a table for two near a window or on a patio",
+			duration: "7:14",
 			description: "A young boy makes his first encounter with the carnage of love.",
 			contentWarning: "Content warning: sexual content",
 			number: 1,
@@ -37,6 +38,7 @@
 			label: "That Thing Behind Glasses",
 			storyteller: "Andrea Folster",
 			locationDescription: "A place to sit facing an apartment or condo nice enough that you could see yourself living in it (ideally with a balcony)",
+			duration: "9:06",
 			thumbnailImageURL: "https://dummyimage.com/120x100",
 			thumbnailImageA11yText: "placeholder image",
 			description: "An internal monologue of an awkward Tinder date, navigating the line between safety and satisfaction.",
@@ -56,9 +58,10 @@
 			label: "Fear on Foot",
 			storyteller: "Elise Pallagi",
 			locationDescription: "Any long and winding urban alleyway",
+			duration: "5:23",
 			thumbnailImageURL: "https://dummyimage.com/120x100",
 			thumbnailImageA11yText: "placeholder image",
-			description: "An examination of street harassment faced by women, queer and gender non conforming people. ",
+			description: "An examination of street harassment faced by women, queer and gender non conforming people.",
 			contentWarning: "Content Warning: graphic content, slurs",
 			number: 3,
 			cues: [{
@@ -75,9 +78,10 @@
 			label: "Take This Body",
 			storyteller: "Shanda Stefanson",
 			locationDescription: "Any patio table",
+			duration: "6:53",
 			thumbnailImageURL: "https://dummyimage.com/120x100",
 			thumbnailImageA11yText: "placeholder image",
-			description: "An invitation to explore someone’s body and its history through poetry and interactive paper craft.",
+			description: 'An invitation to explore someone’s body and its history through poetry and interactive paper craft. This story is accompanied by an image; <a href="media/Butterfly_Origami.jpg" target="_blank">tap here</a> to see it. This story also requires you to have <strong>a piece of square paper and a pen or pencil</strong> for each player.',
 			number: 3,
 			cues: [{
 				cueNumber: 1,
@@ -93,6 +97,7 @@
 			label: "A Path in the Dark",
 			storyteller: "Amberlin Hsu",
 			locationDescription: "Any park with a path that forks into two",
+			duration: "8:40",
 			thumbnailImageURL: "https://dummyimage.com/120x100",
 			thumbnailImageA11yText: "placeholder image",
 			description: "Which path is safest when your love is dangerous and your home won’t protect you?",

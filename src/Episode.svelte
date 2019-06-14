@@ -7,7 +7,7 @@ import { onMount } from 'svelte'
 import { createEventDispatcher } from 'svelte'	
 import { fade } from 'svelte/transition'
 
-export let number, label, thumbnailImageURL, description, contentWarning, thumbnailImageA11yText, storyteller, cues, locationDescription
+export let number, label, thumbnailImageURL, description, contentWarning, thumbnailImageA11yText, storyteller, cues, locationDescription, duration
 
 const dispatch = createEventDispatcher()
 
@@ -87,6 +87,11 @@ h2 {
   margin-right: 1rem;
 }
 
+.episode-metadata p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 </style>
 
 <div class="episode-header d-flex">
@@ -94,10 +99,13 @@ h2 {
   <img class="thumbnail" width=120 height=100 src={thumbnailImageURL} alt={thumbnailImageA11yText}>
   {/if}
 
-  <div>
+  <div class="episode-metadata">
     <h2 class="title">{episodeHeader}</h2>
     {#if storyteller}
     <p>told by: <a href="#" on:click|preventDefault={showStorytellerCard}>{storyteller}</a></p>
+    {/if}
+    {#if duration}
+    <p>length: {duration}</p>
     {/if}
   </div>
 </div>
@@ -106,7 +114,7 @@ h2 {
 <p>location: {locationDescription}</p>
 {/if}
 
-<p class="description">{description}</p>
+<p class="description">{@html description}</p>
 
 {#if contentWarning}
 <p>{contentWarning}</p>
