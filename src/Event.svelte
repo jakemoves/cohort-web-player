@@ -62,16 +62,16 @@ h1 {
 	<h2>{@html event.subLabel}</h2>
 {/if}
 
-{#if !showStorytellerCard}
+<!-- {#if !showStorytellerCard} -->
 {#each event.episodes as episode}
 <div class="episode-container">
 	<Episode {...episode} on:message={handleMessage}/>
 </div>
 {/each}
-{/if}
+<!-- {/if} -->
 
 {#if showStorytellerCard}
-<div class="card-container">
+<div class="card-container fixed-bottom">
 	<StorytellerCard storyteller={selectedStoryteller} on:message={handleMessage}/>
 </div>
 {/if}

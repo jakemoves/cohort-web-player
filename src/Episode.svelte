@@ -42,6 +42,13 @@ $: episodeHeader = label ? label : "Episode " + number
 $: audioURL = currentCue.mediaURL
 $: isLoaded = (audioDuration !== undefined && !isNaN(audioDuration)) ? true : false
 $: if(isLoaded){ console.log("audio loaded: " + audioDuration) }
+
+function thumbnailImageURLWithScale(scaleFactor /* i.e. @2x, @1x */){
+  if(!thumbnailImageURL) { return undefined 
+  }
+  let stringComponents = thumbnailImageURL.split('.')
+  return stringComponents[0] + scaleFactor + '.' + stringComponents[1]
+}
     
 function playNextCue(event){
 
@@ -85,6 +92,7 @@ h2 {
 .thumbnail {
   min-width: 120px;
   margin-right: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .episode-metadata p {
@@ -96,7 +104,11 @@ h2 {
 
 <div class="episode-header d-flex">
   {#if thumbnailImageURL}
-  <img class="thumbnail" width=120 height=100 src={thumbnailImageURL} alt={thumbnailImageA11yText}>
+  <img class="thumbnail" 
+    width=120 height=160 
+    src={thumbnailImageURLWithScale('@1x')} 
+    scrset={ thumbnailImageURLWithScale('@1x') + ' 1x, ' + thumbnailImageURLWithScale('@2x') + ' 2x'} 
+    alt={thumbnailImageA11yText}>
   {/if}
 
   <div class="episode-metadata">
@@ -111,7 +123,7 @@ h2 {
 </div>
 
 {#if locationDescription}
-<p>location: {locationDescription}</p>
+<p><em>{locationDescription}</em></p>
 {/if}
 
 <p class="description">{@html description}</p>

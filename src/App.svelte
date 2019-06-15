@@ -12,110 +12,110 @@
 			description: "If this is your first time with Overhear Solo, please listen to this tutorial. These are interactive stories in which you will may cast yourself in roles with special tasks.",
 			cues: [{
 				cueNumber: 1,
-				mediaURL: "media/Tutorial_Narration.mp3"
+				mediaURL: "media/sound/Tutorial_Narration.mp3"
 			}]
 		},{
 			label: "Mystery Boy",
 			storyteller: "Braden Butler",
-			thumbnailImageURL: "https://dummyimage.com/120x100",
-			thumbnailImageA11yText: "placeholder image",
-			locationDescription: "A small cafe with a table for two near a window or on a patio",
+			thumbnailImageURL: "media/images/mystery-boy.jpg",
+			thumbnailImageA11yText: "a man sitting alone in a café window with an empty seat beside him",
+			locationDescription: "Find a small cafe with a table for two near a window or on a patio",
 			duration: "7:14",
 			description: "A young boy makes his first encounter with the carnage of love.",
 			contentWarning: "Content warning: sexual content",
 			number: 1,
 			cues: [{
 				cueNumber: 1,
-				mediaURL: "media/Mystery_Boy_Story_Intro.mp3"
+				mediaURL: "media/sound/Mystery_Boy_Story_Intro.mp3"
 			},{
 				cueNumber: 2,
-				mediaURL: "media/Mystery_Boy_Player_1.mp3"
+				mediaURL: "media/sound/Mystery_Boy_Player_1.mp3"
 			},{
 				cueNumber: 3,
-				mediaURL: "media/Mystery_Boy_Player_2.mp3"
+				mediaURL: "media/sound/Mystery_Boy_Player_2.mp3"
 			}]
 		},{
 			label: "That Thing Behind Glasses",
 			storyteller: "Andrea Folster",
-			locationDescription: "A place to sit facing an apartment or condo nice enough that you could see yourself living in it (ideally with a balcony)",
+			locationDescription: "Find a place to sit facing an apartment or condo nice enough that you could see yourself living in it (ideally with a balcony)",
 			duration: "9:06",
-			thumbnailImageURL: "https://dummyimage.com/120x100",
-			thumbnailImageA11yText: "placeholder image",
+			thumbnailImageURL: "media/images/that-thing-behind-glasses.jpg",
+			thumbnailImageA11yText: "the front of a building, with many intriguing partially-lit windows",
 			description: "An internal monologue of an awkward Tinder date, navigating the line between safety and satisfaction.",
 			contentWarning: "Content warning: sensitive sexual content",
 			number: 2,
 			cues: [{
 				cueNumber: 1,
-				mediaURL: "media/That_Thing_Behind_Glasses_Story_Intro.mp3"
+				mediaURL: "media/sound/That_Thing_Behind_Glasses_Story_Intro.mp3"
 			},{
 				cueNumber: 2,
-				mediaURL: "media/That_Thing_Behind_Glasses_Player_1__2.mp3"
+				mediaURL: "media/sound/That_Thing_Behind_Glasses_Player_1__2.mp3"
 			},{
 				cueNumber: 3,
-				mediaURL: "media/That_Thing_Behind_Glasses_Player_1__2.mp3"
+				mediaURL: "media/sound/That_Thing_Behind_Glasses_Player_1__2.mp3"
 			}]
 		},{
 			label: "Fear on Foot",
 			storyteller: "Elise Pallagi",
-			locationDescription: "Any long and winding urban alleyway",
+			locationDescription: "Find a long and winding urban alleyway",
 			duration: "5:23",
-			thumbnailImageURL: "https://dummyimage.com/120x100",
-			thumbnailImageA11yText: "placeholder image",
+			thumbnailImageURL: "media/images/fear-on-foot.jpg",
+			thumbnailImageA11yText: "a run-down sidewalk at night",
 			description: "An examination of street harassment faced by women, queer and gender non conforming people.",
 			contentWarning: "Content Warning: graphic content, slurs",
 			number: 3,
 			cues: [{
 				cueNumber: 1,
-				mediaURL: "media/Fear_on_Foot_Story_Intro.mp3"
+				mediaURL: "media/sound/Fear_on_Foot_Story_Intro.mp3"
 			},{
 				cueNumber: 2,
-				mediaURL: "media/Fear_on_Foot_Player_1__2.mp3"
+				mediaURL: "media/sound/Fear_on_Foot_Player_1__2.mp3"
 			},{
 				cueNumber: 3,
-				mediaURL: "media/Fear_on_Foot_Player_1__2.mp3"
+				mediaURL: "media/sound/Fear_on_Foot_Player_1__2.mp3"
 			}]
 		},{
 			label: "Take This Body",
 			storyteller: "Shanda Stefanson",
-			locationDescription: "Any patio table",
+			locationDescription: "Find a patio table",
 			duration: "6:53",
-			thumbnailImageURL: "https://dummyimage.com/120x100",
-			thumbnailImageA11yText: "placeholder image",
+			thumbnailImageURL: "media/images/take-this-body.jpg",
+			thumbnailImageA11yText: "a piece of origami sitting on a park bench",
 			description: 'An invitation to explore someone’s body and its history through poetry and interactive paper craft. This story is accompanied by an image; <a href="media/Butterfly_Origami.jpg" target="_blank">tap here</a> to see it. This story also requires you to have <strong>a piece of square paper and a pen or pencil</strong> for each player.',
 			number: 3,
 			cues: [{
 				cueNumber: 1,
-				mediaURL: "media/Take_This_Body_Story_Intro.mp3"
+				mediaURL: "media/sound/Take_This_Body_Story_Intro.mp3"
 			},{
 				cueNumber: 2,
-				mediaURL: "media/Take_This_Body_Player_1__2.mp3"
+				mediaURL: "media/sound/Take_This_Body_Player_1__2.mp3"
 			},{
 				cueNumber: 3,
-				mediaURL: "media/Take_This_Body_Player_1__2.mp3"
+				mediaURL: "media/sound/Take_This_Body_Player_1__2.mp3"
 			}]
 		},{
 			label: "A Path in the Dark",
 			storyteller: "Amberlin Hsu",
-			locationDescription: "Any park with a path that forks into two",
+			locationDescription: "Find a path that forks into two in a park",
 			duration: "8:40",
-			thumbnailImageURL: "https://dummyimage.com/120x100",
-			thumbnailImageA11yText: "placeholder image",
+			thumbnailImageURL: "media/images/paths-in-the-dark.jpg",
+			thumbnailImageA11yText: "a forking path in a park",
 			description: "Which path is safest when your love is dangerous and your home won’t protect you?",
 			number: 3,
 			cues: [{
 				cueNumber: 1,
-				mediaURL: "media/Paths_in_the_Dark_Story_Intro.mp3"
+				mediaURL: "media/sound/Paths_in_the_Dark_Story_Intro.mp3"
 			},{
 				cueNumber: 2,
-				mediaURL: "media/Paths_in_the_Dark_Player_1__2.mp3"
+				mediaURL: "media/sound/Paths_in_the_Dark_Player_1__2.mp3"
 			},{
 				cueNumber: 3,
-				mediaURL: "media/Paths_in_the_Dark_Player_1__2.mp3"
+				mediaURL: "media/sound/Paths_in_the_Dark_Player_1__2.mp3"
 			}]
 		}],
 		storytellers: [{
 			name: "Braden Butler",
-			thumbnailImageURL: "media/braden-butler.jpg",
+			thumbnailImageURL: "media/images/braden-butler.jpg",
 			bio: "Braden Butler was born and raised in Saskatoon, SK, Canada and moved to Edmonton, AB in the fall of 2017 to pursue a BFA in Acting at the University of Alberta. Recent theatre credits include <em>Wild Abandon</em> (Tough Choice Productions), <em>The Gooseberry</em> (Moplip Theatre/NextFest), <em>Ahunwar: The Devil’s Long Nap</em> (Night Canopy Theatre/2018 Edmonton Fringe), and <em>The Hot Baltimore</em>, The Misfit Vault, An Evening with Anon Chekhov, Midsummer Night’s Dream</em> (University of Alberta). He can be seen next (in Canada!) playing the role of Ken in John Logan’s <em>RED</em> at the 2019 Edmonton Fringe and in his first graduating year production as Buckingham in <em>Richard III</em>. He is thrilled to be a part of the creative ensemble with Overhear and for his work to be shared for the first time overseas. ",
 			links: [ 
 				"http://paypal.me/bradeninspace",
