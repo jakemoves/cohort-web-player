@@ -1,5 +1,6 @@
 <script>
 import { createEventDispatcher } from 'svelte'
+import { imageURLWithScale, srcsetTag } from './Episode.svelte'
 
 export let storyteller
 
@@ -23,18 +24,30 @@ function paymentLink() {
 
 function otherLinks() {
   if(!storyteller.links) { return undefined }
-  
+
   return storyteller.links.filter( link => {
     return !isPaymentLink(link)
   })
 }
 
+
 </script>
 
 <style>
-p.bio {
+p.bio, p.minibio {
   font-size: 0.75rem;
   line-height: 1.3em;
+}
+
+p.bio {
+  margin-top: -2.5rem; /* negative of minibio */
+}
+
+p.minibio {
+  max-height: 2.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0;
 }
 
 h5 {
@@ -48,6 +61,17 @@ h5 {
 
 details {
   margin-bottom: 1rem;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+.details-hint {
+  font-size: 60%;
+  float: right;
+  text-transform: small-caps;
+  padding-top: 0.5rem;
 }
 
 .credits {
@@ -65,11 +89,12 @@ details {
 </style>
 
 <div class="card">
-  <img src="https://dummyimage.com/640x480" class="card-img-top" alt="placeholder image">
+  <img src={imageURLWithScale(storyteller.thumbnailImageURL, "@2x")} class="card-img-top" alt="placeholder image">
   <div class="card-body">
     <details>
       <summary>
-        <h5 class="card-title">{storyteller.name}</h5>
+        <h5 class="card-title">{storyteller.name}<span class="details-hint"> [tap for more]</span></h5>
+        <p class="minibio">{@html storyteller.bio} [tap for more]</p>
       </summary>
       <p class="card-text bio">{@html storyteller.bio}
       {#if storyteller.links}

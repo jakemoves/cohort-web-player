@@ -9,7 +9,8 @@
 		subLabel: "<em>BODIES<br />Love / Sex / Survival<br /><span class='small'>(Prague Quadrennial 2019)</span></em>",
 		episodes: [{
 			label: "Tutorial",
-			description: "If this is your first time with Overhear Solo, please listen to this tutorial. These are interactive stories in which you will may cast yourself in roles with special tasks.",
+			description: "If this is your first time with Overhear Solo, <strong>please listen to this tutorial.</strong> These are <strong>interactive stories</strong> that will require you to adopt roles and perform simple tasks. <em>Overhear Solo: BODIES</em> is <strong>best experienced in the evening</strong>, so stay safe.",
+			number: 0,
 			cues: [{
 				cueNumber: 1,
 				mediaURL: "media/sound/Tutorial_Narration.mp3"
@@ -19,7 +20,7 @@
 			storyteller: "Braden Butler",
 			thumbnailImageURL: "media/images/mystery-boy.jpg",
 			thumbnailImageA11yText: "a man sitting alone in a café window with an empty seat beside him",
-			locationDescription: "Find a small cafe with a table for two near a window or on a patio",
+			locationDescription: "Find a small cafe with a table for two near a window or on a patio.",
 			duration: "7:14",
 			description: "A young boy makes his first encounter with the carnage of love.",
 			contentWarning: "Content warning: sexual content",
@@ -37,7 +38,7 @@
 		},{
 			label: "That Thing Behind Glasses",
 			storyteller: "Andrea Folster",
-			locationDescription: "Find a place to sit facing an apartment or condo nice enough that you could see yourself living in it (ideally with a balcony)",
+			locationDescription: "Find a place to sit facing an apartment or condo nice enough that you could see yourself living in it (ideally with a balcony).",
 			duration: "9:06",
 			thumbnailImageURL: "media/images/that-thing-behind-glasses.jpg",
 			thumbnailImageA11yText: "the front of a building, with many intriguing partially-lit windows",
@@ -57,7 +58,7 @@
 		},{
 			label: "Fear on Foot",
 			storyteller: "Elise Pallagi",
-			locationDescription: "Find a long and winding urban alleyway",
+			locationDescription: "Find a long and winding urban alleyway, or a graffitied street.",
 			duration: "5:23",
 			thumbnailImageURL: "media/images/fear-on-foot.jpg",
 			thumbnailImageA11yText: "a run-down sidewalk at night",
@@ -77,12 +78,13 @@
 		},{
 			label: "Take This Body",
 			storyteller: "Shanda Stefanson",
-			locationDescription: "Find a patio table",
+			locationDescription: "Find a patio table.",
 			duration: "6:53",
 			thumbnailImageURL: "media/images/take-this-body.jpg",
 			thumbnailImageA11yText: "a piece of origami sitting on a park bench",
-			description: 'An invitation to explore someone’s body and its history through poetry and interactive paper craft. This story is accompanied by an image; <a href="media/Butterfly_Origami.jpg" target="_blank">tap here</a> to see it. This story also requires you to have <strong>a piece of square paper and a pen or pencil</strong> for each player.',
-			number: 3,
+			description: '<strong>You\'ll need some simple props for this story</strong><br/> An invitation to explore someone’s body and its history through poetry and interactive paper craft. This story is accompanied by an image; <a href="media/Butterfly_Origami.jpg" target="_blank">tap here</a> to see it. You\'ll also need <strong>a piece of square paper and a pen or pencil</strong> for each player.',
+			contentWarning: "Content warning: sensitive sexual content, sexual harassment / assault",
+			number: 4,
 			cues: [{
 				cueNumber: 1,
 				mediaURL: "media/sound/Take_This_Body_Story_Intro.mp3"
@@ -94,14 +96,15 @@
 				mediaURL: "media/sound/Take_This_Body_Player_1__2.mp3"
 			}]
 		},{
-			label: "A Path in the Dark",
+			label: "Paths in the Dark",
 			storyteller: "Amberlin Hsu",
-			locationDescription: "Find a path that forks into two in a park",
+			locationDescription: "Find a path that forks into two in a park.",
 			duration: "8:40",
 			thumbnailImageURL: "media/images/paths-in-the-dark.jpg",
 			thumbnailImageA11yText: "a forking path in a park",
 			description: "Which path is safest when your love is dangerous and your home won’t protect you?",
-			number: 3,
+			contentWarning: "Content warning: violence",
+			number: 5,
 			cues: [{
 				cueNumber: 1,
 				mediaURL: "media/sound/Paths_in_the_Dark_Story_Intro.mp3"
@@ -116,6 +119,7 @@
 		storytellers: [{
 			name: "Braden Butler",
 			thumbnailImageURL: "media/images/braden-butler.jpg",
+			thumbnailImageA11yText: "a photo of actor Braden Butler",
 			bio: "Braden Butler was born and raised in Saskatoon, SK, Canada and moved to Edmonton, AB in the fall of 2017 to pursue a BFA in Acting at the University of Alberta. Recent theatre credits include <em>Wild Abandon</em> (Tough Choice Productions), <em>The Gooseberry</em> (Moplip Theatre/NextFest), <em>Ahunwar: The Devil’s Long Nap</em> (Night Canopy Theatre/2018 Edmonton Fringe), and <em>The Hot Baltimore</em>, The Misfit Vault, An Evening with Anon Chekhov, Midsummer Night’s Dream</em> (University of Alberta). He can be seen next (in Canada!) playing the role of Ken in John Logan’s <em>RED</em> at the 2019 Edmonton Fringe and in his first graduating year production as Buckingham in <em>Richard III</em>. He is thrilled to be a part of the creative ensemble with Overhear and for his work to be shared for the first time overseas. ",
 			links: [ 
 				"http://paypal.me/bradeninspace",
@@ -123,9 +127,13 @@
 			]
 		},{
 			name: "Andrea Folster",
+			thumbnailImageURL: "media/images/andrea-folster.jpg",
+			thumbnailImageA11yText: "a photo of actor Andrea Folster",
 			bio: "Andrea Folster is an emerging Saulteaux artist who has called Saskatoon home since the age of six; born in Winnipeg, she also has roots in the Brokenhead Ojibway Nation. Thanks to her many wonderful professors and the support of family and friends, Andrea holds a Bachelor of Fine Arts in Drama with a concentration in Acting from the University of Saskatchewan. In the fall of 2017, Andrea made her professional debut in Saskatoon and been lucky enough to ‘tread the boards’ in the Canadian Prairies a few times since then. She is both excited and nervous about contributing to this iteration of <em>Overhear</em>—while she occasionally writes, sharing this work with the world in this way is entering into uncharted territory; much gratitude and thanks to those who helped with feedback and support throughout the creation process. Miigwech."
 		},{
 			name: "Elise Pallagi",
+			thumbnailImageURL: "media/images/elise-pallagi.jpg",
+			thumbnailImageA11yText: "a photo of actor Elise Pallagi",
 			bio: "Elise Pallagi is a spoken word poet, multi-disciplinary performance artist, and a member of both the Saskatoon Indigenous Poets Society and the Saskatoon Poetry Slam Team. Her writing and performance work focuses on her personal experiences and struggles as a transgender woman growing up and living in Treaty 6 territory in the Canadian prairies. Elise is a sought after entertainer who has been a featured artist at many special events, such as The Canadian Festival of Spoken Word, The Nutrien Fringe Festival, Regina’s Word Up, Tonight It’s Poetry, several Pride Festivals, and as both a performer and stage MC for The Ness Creek Music Festival. Her strong presence at Saskatoon poetry slam competitions, poetry readings, and community building public events has been receiving considerable positive reviews, fueling her fire to continue performing provincially and nationally. Combining elements of Vaudeville and Burlesque with her love of roller derby, Star Trek, and defending human rights gives Elise’s style of writing and performance a unique resonance on any stage. Elise uses her voice to create space, aiming to empower others with marginalized voices to claim their space by speaking their own truths as well. Elise conveys emotional authenticity and relatability in her work that moves audiences, touches hearts, and changes minds.",
 			links: [
 				"http://elisepallagi.com",
@@ -135,9 +143,13 @@
 			]
 		},{
 			name: "Shanda Stefanson",
+			thumbnailImageURL: "media/images/shanda-stefanson.jpg",
+			thumbnailImageA11yText: "a photo of actor Shanda Stefanson",
 			bio: "Shanda Stefanson is a poet, spoken word artist, playwright and puppeteer. She has competed nationally representing Saskatoon at both the Canadian Festival of Spoken Word and the Canadian Individual Poetry Slam. Her award-winning play <em>Stalled</em> debuted at the Saskatoon Fringe in 2013. She was a member of the collective that created the spoken word play <em>Our Four Walls</em>, which was nominated for a SATA. Shanda is currently working on a one-woman show dealing with the intersection of sex and grief, and can be found at home most nights playing with her cat when she should be writing. "
 		},{
 			name: "Amberlin Hsu",
+			thumbnailImageURL: "media/images/amberlin-hsu.jpg",
+			thumbnailImageA11yText: "a photo of actor Amberlin Hsu",
 			bio: "Amberlin Hsu is a SATA-winning producer, designer (lighting, costumes, set), and choreographer based in Tokyo and Saskatoon, Canada. She took dance at NTUA in Taiwan and graduated from the University of Saskatchewan with a BFA in Drama (Design). As co-AD of It’s Not A Box Theatre with Torien Cafferata, her recent devised theatre credits include: <em>pimohtēwak</em> (2019), <em>Overhear</em> (2016-2019), <em>cell</em> (2017), <em>Hypneurosis</em> (2016), and <em>Project O</em> (2015). Recent lighting design credits: <em>The Death of a Salesman</em> (Theatre Naught), <em>Displaced</em> (Ground Cover Theatre), <em>Dominion</em> (GTNT), and <em>Les Liaisons Dangereuses</em> (Theatre Naught); Recent costume design credits: <em>The Death of A Salesman</em> (Theatre Naught), <em>Southern Dandy 75</em> (Otto Helmut Productions), <em>Aiden Flynn Lost his Brother, So He Makes Another</em> (Theatre Howl), <em>Macbeth</em> (Embrace Theatre)."
 		}]
 	}

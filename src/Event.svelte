@@ -19,10 +19,12 @@
 		} else if(evt.detail.text == "hideStorytellerCard"){
 			console.log("hiding storyteller card")
 			showStorytellerCard = false
-		} else if(evt.detail.text == "audioEnded"){
-			console.log(event.episodes)
+		} else if(evt.detail.text == "episodeEnded"){
+			console.log("audio playback ended for: ")
 			const finishedEpisode = event.episodes.find( ep => ep.number == evt.detail.episode)
-			console.log(finishedEpisode)
+			console.log(finishedEpisode.label)
+
+			if(finishedEpisode.label == "Tutorial") { return }
 
 			const storytellerName = finishedEpisode.storyteller
 
@@ -46,7 +48,7 @@ h1 {
 }
 
 .episode-container {
-	margin: 2rem 0;
+	margin: 2.5rem 0;
 }
 
 .episode-container:last-child {

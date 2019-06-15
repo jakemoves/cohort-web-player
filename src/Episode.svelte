@@ -1,5 +1,16 @@
 <script context="module">
 let currentPlayer // creates a single "global" variable for all Episodes
+
+export function imageURLWithScale(baseURL, scaleFactor /* i.e. @2x, @1x */){
+  if(!baseURL) { return undefined 
+  }
+  let stringComponents = baseURL.split('.')
+  return stringComponents[0] + scaleFactor + '.' + stringComponents[1]
+}
+
+export function srcsetTag(baseURL) {
+  return imageURLWithScale(baseURL, '@1x') + ' 1x, ' + imageURLWithScale(baseURL, '@2x') + ' 2x'
+}
 </script>
 
 <script>
@@ -27,12 +38,16 @@ onMount( () => {
   }
 
   audioPlayer.addEventListener('ended', (event) => {
-    console.log(event)
-    if(currentCue.cueNumber == 1 && cues.length > 1){
-      // present player choice UI
-      showPlayerChoiceUI = true
+    // console.log(event)
+    if(currentCue.cueNumber == 1){
+      if(cues.length > 1){
+        // present player choice UI
+        showPlayerChoiceUI = true
+      }
     }
-    // dispatch('message', { text: 'audioEnded', episode: number})
+    if(cues.length > 1 && currentCue.cueNumber > 1){
+      dispatch('message', { text: 'episodeEnded', episode: number})
+    }
   })
 })
 
@@ -42,13 +57,6 @@ $: episodeHeader = label ? label : "Episode " + number
 $: audioURL = currentCue.mediaURL
 $: isLoaded = (audioDuration !== undefined && !isNaN(audioDuration)) ? true : false
 $: if(isLoaded){ console.log("audio loaded: " + audioDuration) }
-
-function thumbnailImageURLWithScale(scaleFactor /* i.e. @2x, @1x */){
-  if(!thumbnailImageURL) { return undefined 
-  }
-  let stringComponents = thumbnailImageURL.split('.')
-  return stringComponents[0] + scaleFactor + '.' + stringComponents[1]
-}
     
 function playNextCue(event){
 
@@ -79,7 +87,7 @@ function onBtnPause() {
 }
 
 function showStorytellerCard(event) {
-  event.pre
+  event.preventDefault()
   dispatch('message', { text: 'showStorytellerCard', storyteller: storyteller})
 }
 </script>
@@ -106,8 +114,8 @@ h2 {
   {#if thumbnailImageURL}
   <img class="thumbnail" 
     width=120 height=160 
-    src={thumbnailImageURLWithScale('@1x')} 
-    scrset={ thumbnailImageURLWithScale('@1x') + ' 1x, ' + thumbnailImageURLWithScale('@2x') + ' 2x'} 
+    src={imageURLWithScale(thumbnailImageURL, '@2x')} 
+    scrset={ srcsetTag(thumbnailImageURL) } 
     alt={thumbnailImageA11yText}>
   {/if}
 
