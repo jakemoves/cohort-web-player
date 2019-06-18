@@ -7,6 +7,7 @@
 	let overhearEvent = {
 		label: "Overhear Solo",
 		subLabel: "<em>BODIES<br />Love / Sex / Survival<br /><span class='small'>(Prague Quadrennial 2019)</span></em>",
+		eventDescription: "Solo is the latest development in the Overhear Project. The goal: to provide audiences anywhere and anytime the opportunity to engage with the many stories we have curated, sharing space with each other, playing roles, and interacting with their own local spaces. The set of stories we have launched with all require two players, ideally couples or dates, and explores the micro-choreography of intimacy. Click on the tutorial below!",
 		episodes: [{
 			label: "Tutorial",
 			description: "If this is your first time with Overhear Solo, <strong>please listen to this tutorial.</strong> These are <strong>interactive stories</strong> that will require you to adopt roles and perform simple tasks. <em>Overhear Solo: BODIES</em> is <strong>best experienced in the evening</strong>, so stay safe.",
@@ -134,7 +135,7 @@
 			name: "Elise Pallagi",
 			thumbnailImageURL: "media/images/elise-pallagi.jpg",
 			thumbnailImageA11yText: "a photo of actor Elise Pallagi",
-			bio: "Elise Pallagi is a spoken word poet, multi-disciplinary performance artist, and a member of both the Saskatoon Indigenous Poets Society and the Saskatoon Poetry Slam Team. Her writing and performance work focuses on her personal experiences and struggles as a transgender woman growing up and living in Treaty 6 territory in the Canadian prairies. Elise is a sought after entertainer who has been a featured artist at many special events, such as The Canadian Festival of Spoken Word, The Nutrien Fringe Festival, Regina’s Word Up, Tonight It’s Poetry, several Pride Festivals, and as both a performer and stage MC for The Ness Creek Music Festival. Her strong presence at Saskatoon poetry slam competitions, poetry readings, and community building public events has been receiving considerable positive reviews, fueling her fire to continue performing provincially and nationally. Combining elements of Vaudeville and Burlesque with her love of roller derby, Star Trek, and defending human rights gives Elise’s style of writing and performance a unique resonance on any stage. Elise uses her voice to create space, aiming to empower others with marginalized voices to claim their space by speaking their own truths as well. Elise conveys emotional authenticity and relatability in her work that moves audiences, touches hearts, and changes minds.",
+			bio: "Elise Pallagi is a spoken word poet, multi-disciplinary performance artist, and a member of both the Saskatoon Indigenous Poets Society and the Saskatoon Poetry Slam Team. Her writing and performance work focuses on her personal experiences and struggles as a transgender woman growing up and living in Treaty 6 territory in the Canadian prairies. Elise is a sought after entertainer who has been a featured artist at many special events, such as The Canadian Festival of Spoken Word, The Nutrien Fringe Festival, Regina’s Word Up, Tonight It’s Poetry, several Pride Festivals, and as both a performer and stage MC for The Ness Creek Music Festival.",
 			links: [
 				"http://elisepallagi.com",
 				"http://instagram.com/kandilonglegz",

@@ -47,6 +47,12 @@ h1 {
 	font-variant: small-caps;
 }
 
+.event-description {
+	text-align: center;
+	font-size: 0.9rem;
+	line-height: 1.2rem;
+}
+
 .episode-container {
 	margin: 2.5rem 0;
 }
@@ -62,6 +68,10 @@ h1 {
 {/if}
 {#if event.subLabel}
 	<h2>{@html event.subLabel}</h2>
+{/if}
+
+{#if event.eventDescription }
+<p class="event-description">{event.eventDescription}</p>
 {/if}
 
 <!-- {#if !showStorytellerCard} -->
