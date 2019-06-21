@@ -34,7 +34,7 @@ function otherLinks() {
 function onComment(){
   let responseText = document.getElementById('audience-comment').value
   // console.log(responseText)
-  fetch('http://localhost:3000' + '/api/v1/services/mail', {
+  fetch('https://cohort.rocks' + '/api/v1/services/mail', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json'},
     body: JSON.stringify({ emailBody: responseText, emailSubject: 'Audience response from Overhear Solo (' + storyteller.name + ')', emailRecipient: 'luckyjakemoves@gmail.com,torien.cafferata@gmail.com' })
