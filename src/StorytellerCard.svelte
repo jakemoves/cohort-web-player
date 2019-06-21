@@ -30,6 +30,18 @@ function otherLinks() {
   })
 }
 
+function onComment(){
+  let responseText = document.getElementById('audience-comment').value
+  console.log(responseText)
+  fetch('http://localhost:3000' + '/api/v1/services/mail', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json'},
+        body: JSON.stringify({ emailBody: responseText, emailSubject: 'audience response from overhear solo', emailRecipient: 'luckyjakemoves@gmail.com' })
+      }).then( response => {
+        console.log(response)
+      })
+}
+
 
 </script>
 
@@ -86,6 +98,11 @@ details summary::-webkit-details-marker {
   font-size: 0.8rem
 }
 
+.response-summary {
+  color: #007bff;
+  font-size: 0.8rem;
+}
+
 </style>
 
 <div class="card">
@@ -105,10 +122,20 @@ details summary::-webkit-details-marker {
       {/if}
       </p>
     </details>
-
+    
     {#if paymentLink()}
     <p class="card-text payment-link"><a href={paymentLink()} target="_blank">Tip this storyteller</a></p>
     {/if}
+
+    <details>
+      <summary>
+        <p class="response-summary">Leave a response</p>
+      </summary>
+      <div class="form-group">
+        <textarea name="audience-comment" id="audience-comment" cols="30" rows="4" placeholder="Torien - what should go here?"></textarea>
+        <button class="btn btn-primary" on:click={onComment}>Send response</button>
+      </div>
+    </details>
 
     <dl class="row credits">
       <dt class="col-5">Director:</dt>
