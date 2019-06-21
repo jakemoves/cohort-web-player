@@ -338,8 +338,8 @@
 <svelte:head>
 	<title>Overhear Solo</title>
 	<link rel="stylesheet" href="bootstrap/bootstrap.css">
-	<meta property="og:url" content="https://cohort.rocks/overhear-solo" />
-	<meta property="og:title" content="Overhear Solo">
+	<meta property="og:url" content="https://cohort.rocks/overhear-solo/" />
+	<meta property="og:title" content="Overhear Solo" />
 </svelte:head>
 
 <div class="container">
