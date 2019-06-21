@@ -2,8 +2,10 @@
 	import Episode from './Episode.svelte';
 	import StorytellerCard from './StorytellerCard.svelte'
 	import { slide } from 'svelte/transition'
+	import { onMount } from 'svelte'
+	import { splice } from 'svelte-extras'
 
-	export let event;
+	export let event
 
 	let showStorytellerCard = false
 	let selectedStoryteller = event.storytellers[0]

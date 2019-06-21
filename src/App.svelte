@@ -155,6 +155,35 @@
 		}]
 	}
 
+	// we want the episodes to be presented in a random order, so let's shuffle them
+	let episodes = overhearEvent.episodes
+
+	// set aside the tutorial so it doesn't get shuffled
+	let tutorial = episodes.splice(0, 1)[0]
+
+	// console.log(episodes.map( ep => ep.label))
+
+	// shuffle the episodes
+	for(var i = episodes.length -1; i > 0; i--){
+		let randomIndex = Math.floor(Math.random() * (i+1))
+
+		// this should work but doesn't, seems like a bug with rollup
+		// [episodes[i], episodes[randomIndex]] = [episodes[randomIndex], episodes[i]]
+		
+		// so let's do it the old way
+		let epA = episodes[i]
+		episodes[i] = episodes[randomIndex]
+		episodes[randomIndex] = epA
+	}
+
+	// bring back the tutorial
+	episodes.splice(0, 0, tutorial)
+	
+	delete overhearEvent.episodes
+	overhearEvent.episodes = episodes
+
+	// console.log(overhearEvent.episodes.map( ep => [ep.label, ep.cues]))
+
 	// const serverURL = "https://cohort.rocks/api/v1"
 	// const socketURL = "wss://cohort.rocks/sockets"
 	// const eventId = 4
