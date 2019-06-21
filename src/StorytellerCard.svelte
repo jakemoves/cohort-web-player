@@ -5,6 +5,7 @@ import { imageURLWithScale, srcsetTag } from './Episode.svelte'
 export let storyteller
 
 const dispatch = createEventDispatcher()
+let sentResponse = false
 
 function onBtnBack(){
   dispatch('message', { text: 'hideStorytellerCard'})
@@ -32,16 +33,19 @@ function otherLinks() {
 
 function onComment(){
   let responseText = document.getElementById('audience-comment').value
-  console.log(responseText)
+  // console.log(responseText)
   fetch('http://localhost:3000' + '/api/v1/services/mail', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json'},
-        body: JSON.stringify({ emailBody: responseText, emailSubject: 'audience response from overhear solo', emailRecipient: 'luckyjakemoves@gmail.com' })
-      }).then( response => {
-        console.log(response)
-      })
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json'},
+    body: JSON.stringify({ emailBody: responseText, emailSubject: 'Audience response from Overhear Solo (' + storyteller.name + ')', emailRecipient: 'luckyjakemoves@gmail.com,torien.cafferata@gmail.com' })
+  }).then( response => {
+    if(response.status != 200){
+      console.log(response)
+    } else {
+      sentResponse = true
+    }
+  })
 }
-
 
 </script>
 
@@ -103,6 +107,10 @@ details summary::-webkit-details-marker {
   font-size: 0.8rem;
 }
 
+.audience-comment {
+  margin-bottom: 1rem;
+}
+
 </style>
 
 <div class="card">
@@ -127,15 +135,21 @@ details summary::-webkit-details-marker {
     <p class="card-text payment-link"><a href={paymentLink()} target="_blank">Tip this storyteller</a></p>
     {/if}
 
+    {#if !sentResponse}
     <details>
       <summary>
         <p class="response-summary">Leave a response</p>
       </summary>
       <div class="form-group">
-        <textarea name="audience-comment" id="audience-comment" cols="30" rows="4" placeholder="Torien - what should go here?"></textarea>
+        <textarea class="form-control audience-comment" name="audience-comment" id="audience-comment" rows="4" placeholder="Torien - what should go here?"></textarea>
         <button class="btn btn-primary" on:click={onComment}>Send response</button>
       </div>
     </details>
+    {:else}
+    <div class="alert alert-success" role="alert">
+      Response sent — thank you!
+    </div>
+    {/if}
 
     <dl class="row credits">
       <dt class="col-5">Director:</dt>
