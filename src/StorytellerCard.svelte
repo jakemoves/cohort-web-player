@@ -109,6 +109,7 @@ details summary::-webkit-details-marker {
 
 .audience-comment {
   margin-bottom: 1rem;
+  font-size: 0.8rem;
 }
 
 </style>
@@ -141,7 +142,7 @@ details summary::-webkit-details-marker {
         <p class="response-summary">Leave a response</p>
       </summary>
       <div class="form-group">
-        <textarea class="form-control audience-comment" name="audience-comment" id="audience-comment" rows="4" placeholder="Torien - what should go here?"></textarea>
+        <textarea class="form-control audience-comment" name="audience-comment" id="audience-comment" rows="4" placeholder="We are always growing and appreciate your feedback. Would you like to share a response or a story of your own? All comments are anonymous."></textarea>
         <button class="btn btn-primary" on:click={onComment}>Send response</button>
       </div>
     </details>
