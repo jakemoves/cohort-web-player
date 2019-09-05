@@ -83,7 +83,7 @@
 			duration: "6:53",
 			thumbnailImageURL: "media/images/take-this-body.jpg",
 			thumbnailImageA11yText: "a piece of origami sitting on a park bench",
-			description: '<strong>You\'ll need some simple props for this story</strong><br/> An invitation to explore someone’s body and its history through poetry and interactive paper craft. This story is accompanied by an image; <a href="media/Butterfly_Origami.jpg" target="_blank">tap here</a> to see it. You\'ll also need <strong>a piece of square paper and a pen or pencil</strong> for each player.',
+			description: '<strong>You\'ll need some simple props for this story</strong><br/> An invitation to explore someone’s body and its history through poetry and interactive paper craft. This story is accompanied by an image; <a href="media/images/Butterfly_Origami.jpg" target="_blank">tap here</a> to see it. You\'ll also need <strong>a piece of square paper and a pen or pencil</strong> for each player.',
 			contentWarning: "Content warning: sensitive sexual content, sexual harassment / assault",
 			number: 4,
 			cues: [{
