@@ -14,14 +14,28 @@ class CohortClientSession extends EventEmitter {
 
   init(){
     return new Promise( async (resolve, reject) => {
-      this.socket = await this.connect()
+
+      try {
+        this.socket = await this.connect()
+      }
+      catch( error ) {
+        return reject(error) 
+      }
+
       return resolve()
     })
   }
 
   connect(){
     return new Promise( (resolve, reject) => {
-      let socket = new WebSocket(this.socketURL)
+      let socket 
+
+      try {
+        socket = new WebSocket(this.socketURL)
+      } catch (error) {
+        return reject(error)
+      }
+
       socket.addEventListener('open', () => {
         socket.send(JSON.stringify({ 
           guid: "" + this.guid, 
@@ -35,8 +49,8 @@ class CohortClientSession extends EventEmitter {
       })
       
       socket.addEventListener('error', (err) => {
+        err.stopImmediatePropagation()
         console.log(err)
-        return reject(err)
       })
 
       socket.addEventListener('message', (message) => {

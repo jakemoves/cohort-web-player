@@ -16,9 +16,12 @@ export function srcsetTag(baseURL) {
 <script>
 import { onMount } from 'svelte'
 import { createEventDispatcher } from 'svelte'	
-import { fade } from 'svelte/transition'
+import { fade, fly } from 'svelte/transition'
 
 export let number, label, thumbnailImageURL, description, contentWarning, thumbnailImageA11yText, storyteller, cues, locationDescription, duration
+
+// this prop allows cohort server to trigger episode playback
+export let episodeNumberToPlay
 
 const dispatch = createEventDispatcher()
 
@@ -29,6 +32,7 @@ let currentCue = { mediaURL: ''}
 let showPlayerChoiceUI = false
 let audioPreloadSetting = "none"
 let audioDuration
+let showAudioPermissionsModal = false
 
 onMount( () => {
   if(cues.length > 0){
@@ -57,18 +61,35 @@ $: episodeHeader = label ? label : "Episode " + number
 $: audioURL = currentCue.mediaURL
 $: isLoaded = (audioDuration !== undefined && !isNaN(audioDuration)) ? true : false
 $: if(isLoaded){ console.log("audio loaded: " + audioDuration) }
-    
-function playNextCue(event){
-
+$: if(number == episodeNumberToPlay){
+  playEpisode()
 }
 
 function onBtnPlay() {
+  playEpisode()
+}
+
+function playEpisode(){
   if(currentPlayer && currentPlayer !== audioPlayer) {
     currentPlayer.pause()
   }
 
   currentPlayer = audioPlayer
-  isPaused = false
+  
+  // we need to work with browser protections against autoplaying audio
+  currentPlayer
+    .play()
+    .then( () => {
+      // if the play() succeeded, hide the permission modal
+      showAudioPermissionsModal = false
+    })
+    .catch( error => {
+      if(error.message == "The request is not allowed by the user agent or the platform in the current context, possibly because the user denied permission.") {
+        // remote play failed because the user hasn't manually started any audio on the page yet
+        console.log("need user permission for audio playback")
+        showAudioPermissionsModal = true
+      }
+    })
 }
 
 function onBtnPlayerSelected(event){
@@ -106,6 +127,10 @@ h2 {
 .episode-metadata p {
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.modal {
+  display: block;
 }
 
 </style>
@@ -172,3 +197,21 @@ h2 {
   bind:this={audioPlayer}
   bind:duration={audioDuration}
 ></audio>
+
+<!-- Modal -->
+{#if showAudioPermissionsModal}
+<div class="modal" transition:fly={{y: -200, duration: 200}} id={"audioPermissionModalEpisode" + number} tabindex="-1" role="dialog" aria-labelledby={"modalTitleEpisode" + number} aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <p id={"modalTitleEpisode" + number}>
+          We need your permission to play audio...
+        </p>
+        <button class="btn btn-success btn-block mb-4" on:click={playEpisode}>
+          Tap to allow Overhear Live to play audio
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+{/if}

@@ -2,10 +2,14 @@
 	import Episode from './Episode.svelte';
 	import StorytellerCard from './StorytellerCard.svelte'
 	import { slide } from 'svelte/transition'
-	import { onMount } from 'svelte'
 	import { splice } from 'svelte-extras'
 
 	export let event
+
+	export let connectedToCohortServer
+	
+	// this prop allows cohort server to trigger episode playback
+	export let episodeNumberToPlay
 
 	let showStorytellerCard = false
 	let selectedStoryteller = event.storytellers[0]
@@ -64,7 +68,12 @@ h1 {
 }
 
 </style>
-<h1>{event.label}</h1>
+
+<h1>{event.label}
+	{#if connectedToCohortServer}
+		<span class="text-success">+ live</span>
+	{/if}
+</h1>
 {#if event.thumbnailImageURL}
 	<img src={event.thumbnailImageURL} alt="placeholder image" class="img-fluid">
 {/if}
@@ -79,7 +88,7 @@ h1 {
 <!-- {#if !showStorytellerCard} -->
 {#each event.episodes as episode}
 <div class="episode-container">
-	<Episode {...episode} on:message={handleMessage}/>
+	<Episode {...episode} episodeNumberToPlay={episodeNumberToPlay} on:message={handleMessage}/>
 </div>
 {/each}
 <!-- {/if} -->

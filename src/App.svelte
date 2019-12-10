@@ -6,6 +6,7 @@
 	import CohortClientSession from './CHSession.js'
 
 	let overhearEvent = {
+		eventId: 6,
 		label: "Overhear Solo",
 		subLabel: "<em>BODIES<br />Love / Sex / Survival<br /><span class='small'>(Prague Quadrennial 2019)</span></em>",
 		eventDescription: "Solo is the latest development in the Overhear Project. The goal: to provide audiences anywhere and anytime the opportunity to engage with the many stories we have curated, sharing space with each other, playing roles, and interacting with their own local spaces. The set of stories we have launched with all require two players, ideally couples or dates, and explores the micro-choreography of intimacy — and vulnerability. Click on the tutorial below!",
@@ -155,25 +156,30 @@
 			bio: "Amberlin Hsu is a SATA-winning producer, designer (lighting, costumes, set), and choreographer based in Tokyo and Saskatoon, Canada. She took dance at NTUA in Taiwan and graduated from the University of Saskatchewan with a BFA in Drama (Design). As co-AD of It’s Not A Box Theatre with Torien Cafferata, her recent devised theatre credits include: <em>pimohtēwak</em> (2019), <em>Overhear</em> (2016-2019), <em>cell</em> (2017), <em>Hypneurosis</em> (2016), and <em>Project O</em> (2015). Recent lighting design credits: <em>The Death of a Salesman</em> (Theatre Naught), <em>Displaced</em> (Ground Cover Theatre), <em>Dominion</em> (GTNT), and <em>Les Liaisons Dangereuses</em> (Theatre Naught); Recent costume design credits: <em>The Death of A Salesman</em> (Theatre Naught), <em>Southern Dandy 75</em> (Otto Helmut Productions), <em>Aiden Flynn Lost his Brother, So He Makes Another</em> (Theatre Howl), <em>Macbeth</em> (Embrace Theatre)."
 		}]
 	}
+	let cohortOccasion = 6
+
+	let connectedToCohortServer = false
+	let episodeNumberToPlay = null // used to trigger episode playback remotely (from cohort server)
 
 	/*
 	 *    Prepare Cohort functionality (for live cues)
 	 */
-	let cohortSession = new CohortClientSession('ws://localhost:3000/sockets', 3)
+
+	let cohortSession = new CohortClientSession('wss://staging.cohort.rocks/sockets', 6)
 
 	cohortSession.on('connected', () => {
+		connectedToCohortServer = true
 		console.log('connected to cohort server')
 	})
 	cohortSession.on('disconnected', (message) => {
-		console.log('disconnected from cohort server:')
-		console.log(message)
+		connectedToCohortServer = false
+		console.log(connectedToCohortServer)
 	})
 	cohortSession.on('cueReceived', (cue) => {
 		console.log('cue received:')
 		console.log(cue)
 
-		// treat cueNumber as episode number
-		// play episode?
+		episodeNumberToPlay = cue.cueNumber
 	})
 
 	cohortSession.init()
@@ -242,7 +248,10 @@
 <div class="container">
 	<div class="row">
 		<div class="col">
-			<Event event={overhearEvent}/>
+			<Event 
+				event={overhearEvent} 
+				connectedToCohortServer={connectedToCohortServer} episodeNumberToPlay={episodeNumberToPlay}
+			/>
 		</div>
 	</div>
 </div>
