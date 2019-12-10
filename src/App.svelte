@@ -3,6 +3,7 @@
 	// import Guid from 'uuid/v4'
 	import Event from './Event.svelte'
 	import { onMount } from 'svelte'
+	import CohortClientSession from './CHSession.js'
 
 	let overhearEvent = {
 		label: "Overhear Solo",
@@ -155,6 +156,32 @@
 		}]
 	}
 
+	/*
+	 *    Prepare Cohort functionality (for live cues)
+	 */
+	let cohortSession = new CohortClientSession('ws://localhost:3000/sockets', 3)
+
+	cohortSession.on('connected', () => {
+		console.log('connected to cohort server')
+	})
+	cohortSession.on('disconnected', (message) => {
+		console.log('disconnected from cohort server:')
+		console.log(message)
+	})
+	cohortSession.on('cueReceived', (cue) => {
+		console.log('cue received:')
+		console.log(cue)
+
+		// treat cueNumber as episode number
+		// play episode?
+	})
+
+	cohortSession.init()
+
+	/*
+	 *    End Cohort
+	 */
+
 	// we want the episodes to be presented in a random order, so let's shuffle them
 	let episodes = overhearEvent.episodes
 
@@ -197,138 +224,8 @@
 	// const guid = Cookies.get('cohort-device-guid')
 
 	onMount( () => {
-		// checkInAndConnectToCohortServer()
+
 	})
-
-	function checkInAndConnectToCohortServer(){
-		console.log('checkInAndConnectToCohortServer()')
-		// register this app as a device
-		fetch(serverURL + '/devices', {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json'},
-			body: JSON.stringify({ guid: guid })
-		}).then( response => {
-			if(response.status == 200 /* this device already exists */ || 
-				response.status == 201 /* created this device */ ){
-			
-				// check in to the event
-				fetch(serverURL + '/events/' + eventId + '/check-in', {
-					method: 'PATCH',
-					headers: { 'Content-Type': 'application/json'},
-					body: JSON.stringify({ guid: guid })
-				}).then( response => {
-					if(response.status == 200){
-						cohortState = 'checked-in'
-						
-						// refresh the event details
-						fetch(serverURL + '/events/' + eventId, {
-							method: 'GET'
-						}).then( response => {
-							if(response.status == 200){
-								response.json().then( event => {
-									
-									eventDetails = event
-									
-									// if the event is open, connect to it over websockets
-									if(eventDetails.state == 'open'){
-										openWebSocketConnection(eventId)
-									} else {
-										
-									}
-								})
-							} else {
-								response.text().then( errorText => {
-									console.log(errorText)
-								})
-							}
-						})
-
-					} else {
-						response.text().then( errorText => {
-							console.log(errorText)
-						})
-					}
-				})
-			} else {
-				console.log('error registering this app as a device')
-				response.text().then( error => {
-					console.log(error)
-				})
-			}
-		})
-	}
-
-	function openWebSocketConnection(eventId) {
-		let clientSocket = new WebSocket(socketURL)
-
-		clientSocket.addEventListener('open', () => {
-			console.log('connection open')
-			clientSocket.send(JSON.stringify({ guid: guid, eventId: eventId }))
-		})
-
-		clientSocket.addEventListener('message', (message) => {
-			const msg = JSON.parse(message.data)
-			console.log(msg)
-			if(msg.response && msg.response !== undefined && msg.response == 'success'){
-				cohortState = 'connected'
-			}
-			
-			if(msg.mediaDomain && msg.mediaDomain !== undefined && 
-				msg.cueNumber && msg.cueNumber !== undefined && 
-				msg.cueAction && msg.cueAction !== undefined) {
-				
-				// it's a valid cohort message
-				if(msg.mediaDomain == 'episode'){
-					let episode = episodes.find( episode => episode.id == msg.cueNumber )
-					if(episode !== undefined){
-						switch(msg.cueAction) {
-							case 'load':
-								// new loading behaviour
-								// episode.sound.load()
-								// vmE.audioLoading = true
-								break;
-							case 'go': // should only have an effect when an episode is not playing
-								
-								// if(!vmE.currentPlayingEpisode){
-									
-								// 	vmE.currentPlayingEpisode = episode
-								// 	if(episode.sound.state !== 'loaded'){
-								// 		vmE.audioLoading = true
-								// 	}
-								// 	setTimeout( () => {
-								// 		episode.sound.play()
-								// 	}, 4000) // delay to help make sure all clients are ready to go
-								// 	// catch up logic (in case of delayed start) would go here
-								// }
-								break;
-							case 'stop':
-								// episode.sound.stop()
-								// episode.sound.unload()
-								// vmE.audioLoading = false
-								// vmE.currentPlayingEpisode = null
-							// case 'pause':
-							//   episode.sound.pause()
-							//   break;
-							// case 'restart':
-							//   episode.sound.seek(0)
-								break;
-							default:
-								break;
-						}
-					}
-				}
-			}
-		})
-
-		clientSocket.addEventListener('close', () => {
-			console.log('connection closed')
-			cohortState = 'checked-in'
-		})
-
-		clientSocket.addEventListener('error', (err) => {
-			console.log(err)
-		})
-	}
 
 </script>
 
