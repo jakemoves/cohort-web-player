@@ -15,9 +15,13 @@
 	function handleMessage(evt) {
 		console.log(evt)
 		if(evt.detail.text == "showStorytellerCard"){
-			console.log("showing card for " + evt.detail.storyteller)
-			selectedStoryteller = event.storytellers.find( storyteller => storyteller.name == evt.detail.storyteller)
-			showStorytellerCard = true
+			let newSelectedStoryteller
+			newSelectedStoryteller = event.storytellers.find( storyteller => storyteller.name == evt.detail.storyteller)
+			if(newSelectedStoryteller !== undefined) {
+				console.log("showing card for " + evt.detail.storyteller)
+				selectedStoryteller = newSelectedStoryteller
+				showStorytellerCard = true
+			}
 		} else if(evt.detail.text == "hideStorytellerCard"){
 			console.log("hiding storyteller card")
 			showStorytellerCard = false
