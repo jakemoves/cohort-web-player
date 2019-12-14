@@ -76,7 +76,7 @@ h1 {
 	<h2>{@html event.subLabel}</h2>
 {/if}
 
-{#if event.eventDescription }
+{#if event.eventDescription != ""}
 <p class="event-description">{event.eventDescription}</p>
 {/if}
 

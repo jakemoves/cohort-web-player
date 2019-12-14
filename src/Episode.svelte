@@ -121,24 +121,24 @@ h2 {
 
   <div class="episode-metadata">
     <h2 class="title">{episodeHeader}</h2>
-    {#if storyteller}
+    <!-- {#if storyteller}
     <p>told by: <a href="#" on:click|preventDefault={showStorytellerCard}>{storyteller}</a></p>
-    {/if}
+    {/if} -->
     {#if duration}
     <p>length: {duration}</p>
     {/if}
   </div>
 </div>
 
-{#if locationDescription}
+<!-- {#if locationDescription}
 <p><em>{locationDescription}</em></p>
-{/if}
+{/if} -->
 
-<p class="description">{@html description}</p>
+<!-- <p class="description">{@html description}</p>
 
 {#if contentWarning}
 <p>{contentWarning}</p>
-{/if}
+{/if} -->
 
 {#if !showPlayerChoiceUI}
   {#if isPaused}

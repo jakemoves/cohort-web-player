@@ -7,7 +7,7 @@
 	let overhearEvent = {
 		label: "Overhear Solo",
 		subLabel: "<em>Winter 2019</em>",
-		eventDescription: "Event description goes here",
+		eventDescription: "",
 		shuffleEpisodes: false,
 		episodes: [{
 			label: "Intro",
@@ -15,7 +15,7 @@
 			number: 1,
 			cues: [{
 				cueNumber: 1,
-				mediaURL: "media/sound/01_Intro_ambience.mp3"
+				mediaURL: "https://overhear-winter-2019.s3.ca-central-1.amazonaws.com/01_Intro_ambience.mp3"
 			}]
 		},{
 			label: "Benny's Story",
@@ -29,7 +29,7 @@
 			number: 2,
 			cues: [{
 				cueNumber: 1,
-				mediaURL: "media/sound/02_Benny_s_Story.mp3"
+				mediaURL: "https://overhear-winter-2019.s3.ca-central-1.amazonaws.com/02_Benny_s_Story.mp3"
 			}]
 		},{
 			label: "Kaylyn's Story",
@@ -43,7 +43,7 @@
 			number: 3,
 			cues: [{
 				cueNumber: 1,
-				mediaURL: "media/sound/03_Kaylyn_s_Story.mp3"
+				mediaURL: "https://overhear-winter-2019.s3.ca-central-1.amazonaws.com/03_Kaylyn_s_Story.mp3"
 			}]
 		},{
 			label: "Kokum's Story",
@@ -57,7 +57,7 @@
 			number: 4,
 			cues: [{
 				cueNumber: 1,
-				mediaURL: "media/sound/04_Kokum_s_Story.mp3"
+				mediaURL: "https://overhear-winter-2019.s3.ca-central-1.amazonaws.com/04_Kokum_s_Story.mp3"
 			}]
 		},{
 			label: "Rachel's Story",
@@ -71,7 +71,7 @@
 			number: 5,
 			cues: [{
 				cueNumber: 1,
-				mediaURL: "media/sound/05_Rachel_s_Story.mp3"
+				mediaURL: "https://overhear-winter-2019.s3.ca-central-1.amazonaws.com/05_Rachel_s_Story.mp3"
 			}]
 		},{
 			label: "Sara's Story",
@@ -85,21 +85,7 @@
 			number: 7,
 			cues: [{
 				cueNumber: 1,
-				mediaURL: "media/sound/07_Sara_s_Story.mp3"
-			}]
-		},{
-			label: "Curtain call",
-			storyteller: "[no storyteller]",
-			thumbnailImageURL: "",
-			thumbnailImageA11yText: "",
-			locationDescription: "",
-			duration: "",
-			description: "[no description]",
-			contentWarning: "[no content warning]",
-			number: 8,
-			cues: [{
-				cueNumber: 1,
-				mediaURL: "media/sound/08_Curtain_call.mp3"
+				mediaURL: "https://overhear-winter-2019.s3.ca-central-1.amazonaws.com/07_Sara_s_Story_and_curtain_call.mp3"
 			}]
 		}],
 		storytellers: [{
