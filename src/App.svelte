@@ -74,6 +74,20 @@
 				mediaURL: "https://overhear-winter-2019.s3.ca-central-1.amazonaws.com/05_Rachel_s_Story.mp3"
 			}]
 		},{
+			label: "Allison's Story",
+			storyteller: "[no storyteller]",
+			thumbnailImageURL: "",
+			thumbnailImageA11yText: "",
+			locationDescription: "",
+			duration: "5:15",
+			description: "[no description]",
+			contentWarning: "[no content warning]",
+			number: 6,
+			cues: [{
+				cueNumber: 1,
+				mediaURL: "https://overhear-winter-2019.s3.ca-central-1.amazonaws.com/06_Allison_s_Story.mp3"
+			}]
+		},{
 			label: "Sara's Story",
 			storyteller: "[no storyteller]",
 			thumbnailImageURL: "",
