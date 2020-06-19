@@ -18,7 +18,7 @@ import { onMount } from 'svelte'
 import { createEventDispatcher } from 'svelte'	
 import { fade } from 'svelte/transition'
 
-export let number, label, thumbnailImageURL, description, contentWarning, thumbnailImageA11yText, storyteller, cues, locationDescription, duration
+export let number, label, thumbnailImageURL, thumbnailImageHeight, description, contentWarning, thumbnailImageA11yText, storyteller, cues, locationDescription, duration
 
 const dispatch = createEventDispatcher()
 
@@ -86,6 +86,10 @@ function onBtnPause() {
   isPaused = true
 }
 
+function onBtnBack15s(){
+  audioPlayer.currentTime = audioPlayer.currentTime - 15.0
+}
+
 function showStorytellerCard(event) {
   event.preventDefault()
   dispatch('message', { text: 'showStorytellerCard', storyteller: storyteller})
@@ -103,9 +107,24 @@ h2 {
   margin-bottom: 0.5rem;
 }
 
+.episode-metadata {
+  margin-bottom: 1rem;
+}
+
 .episode-metadata p {
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.episode-details p {
+  font-size: 0.8rem;
+  /* line-height: 0.8rem; */
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.episode-details {
+  margin-bottom: 1rem;
 }
 
 </style>
@@ -113,7 +132,7 @@ h2 {
 <div class="episode-header d-flex">
   {#if thumbnailImageURL}
   <img class="thumbnail" 
-    width=120 height=160 
+    width="120" height="{thumbnailImageHeight}"
     src={imageURLWithScale(thumbnailImageURL, '@2x')} 
     scrset={ srcsetTag(thumbnailImageURL) } 
     alt={thumbnailImageA11yText}>
@@ -121,11 +140,9 @@ h2 {
 
   <div class="episode-metadata">
     <h2 class="title">{episodeHeader}</h2>
-    <!-- {#if storyteller}
-    <p>told by: <a href="#" on:click|preventDefault={showStorytellerCard}>{storyteller}</a></p>
-    {/if} -->
-    {#if duration}
-    <p>length: {duration}</p>
+    {#if storyteller}
+      <p>by {storyteller}</p>
+    <!-- <p>told by: <a href="#" on:click|preventDefault={showStorytellerCard}>{storyteller}</a></p> -->
     {/if}
   </div>
 </div>
@@ -134,11 +151,16 @@ h2 {
 <p><em>{locationDescription}</em></p>
 {/if} -->
 
-<!-- <p class="description">{@html description}</p>
+<p class="description">{@html description}</p>
 
+<div class="episode-details">
 {#if contentWarning}
-<p>{contentWarning}</p>
-{/if} -->
+<p>Content warnings: {contentWarning}</p>
+{/if}
+{#if duration}
+<p>Length: {duration}</p>
+{/if}
+</div>
 
 {#if !showPlayerChoiceUI}
   {#if isPaused}
@@ -153,9 +175,10 @@ h2 {
     <button 
       type="button" 
       on:click={onBtnPause} 
-      class="btn btn-outline btn-outline-warning btn-block">
+      class="btn btn-outline btn-outline-warning">
       {#if isLoaded}Pause{:else}Loading{/if}
     </button>
+    <button type="button" class="btn btn-outline btn-outline-primary" on:click={onBtnBack15s}>Rewind 15s</button>
   {/if}
 {:else}
   <div class="form-group d-flex justify-content-around" in:fade={{duration: 250}}>

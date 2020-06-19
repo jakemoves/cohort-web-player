@@ -6,106 +6,59 @@
 
 	let overhearEvent = {
 		label: "Overhear Solo",
-		subLabel: "<em>Winter 2019</em>",
-		eventDescription: "",
+		subLabel: "<em>Circle of Voices 2019/2020</em>",
+		eventDescription: `This Overhear Solo story set has been adapted from a live immersive theatre showcase devised and performed by Circle of Voices students as part of a 3-day workshop, facilitated in December 2019 by <a href="http://gtnt.ca">Gordon Tootoosis Nīkānīwin Theatre</a> and <a href="https://www.itsnotaboxtheatre.ca/">It's Not a Box Theatre</a>.<br/ ><br />These completely original podplays are a blend of fiction and non-fiction, of both writing and recorded interviews, based on dreams, nightmares, and healing. They have been adapted into interactive 1-player podplays designed to be played in certain places and for certain activities. While you are welcome to listen to them anywhere, for the full experience please consider the location and activity in each synopsis and press play when you are ready. Think of it like an immersive podcast — a play starring you, the story, and your live environment.`,
 		shuffleEpisodes: false,
 		episodes: [{
-			label: "Intro",
-			description: "",
-			number: 1,
-			cues: [{
-				cueNumber: 1,
-				mediaURL: "https://overhear-winter-2019.s3.ca-central-1.amazonaws.com/01_Intro_ambience.mp3"
-			}]
-		},{
-			label: "Benny's Story",
-			storyteller: "[no storyteller]",
-			thumbnailImageURL: "",
-			thumbnailImageA11yText: "",
+			label: "Spiders",
+			storyteller: "Benny Severight",
+			thumbnailImageURL: "media/images/Spiders.jpg",
+			thumbnailImageHeight: 68,
+			thumbnailImageA11yText: "A spiderweb strung with beads of dew",
 			locationDescription: "",
 			duration: "5:29",
-			description: "[no description]",
-			contentWarning: "[no content warning]",
+			description: "Some fears get webbed up in others. Some infest and threaten to drag us under. This recurring nightmare reminds us it’s hard to look out for a friend when you’re both on the fringe. Listen to this when you’re in bed with all the lights out, tucked in, and ready for sleep.",
+			contentWarning: "mental health ",
+			number: 0,
+			cues: [{
+				cueNumber: 1,
+				mediaURL: "https://overhear-winter-2019.s3.ca-central-1.amazonaws.com/Spiders.mp3"
+			}]
+		},{
+			label: "Car Crash",
+			storyteller: "Allison Meckling",
+			thumbnailImageHeight: 68,
+			thumbnailImageURL: "media/images/CarCrash.jpg",
+			thumbnailImageA11yText: "A driver's-eye view of a two-lane road at night",
+			locationDescription: "",
+			duration: "4:14",
+			description: "How many near misses have you had? Think of the difference a single moment, a single choice, can make on your life. Listen to this while you’re out for a drive in a moving vehicle or while cycling or walking along a street with traffic. ",
+			contentWarning: "car accident violence, death or dying",
 			number: 2,
 			cues: [{
 				cueNumber: 1,
-				mediaURL: "https://overhear-winter-2019.s3.ca-central-1.amazonaws.com/02_Benny_s_Story.mp3"
+				mediaURL: "https://overhear-winter-2019.s3.ca-central-1.amazonaws.com/CarCrash.mp3"
 			}]
 		},{
-			label: "Kaylyn's Story",
-			storyteller: "[no storyteller]",
-			thumbnailImageURL: "",
-			thumbnailImageA11yText: "",
+			label: "Brunch with a Side of Seizures",
+			storyteller: "Rachel Ermine",
+			thumbnailImageURL: "media/images/Brunch.jpg",
+			thumbnailImageHeight: 80,
+			thumbnailImageA11yText: "A moderately fancy restaurant, empty and ready for service",
 			locationDescription: "",
-			duration: "5:30",
-			description: "[no description]",
-			contentWarning: "[no content warning]",
+			duration: "5:17",
+			description: "Who would take care of you in your time of greatest need? How do you nourish those relationships? Listen to this at the dinner table, while you share breakfast (or any meal) with someone close to you. Think about what it is you would miss about them the most. What would they miss about you?",
+			contentWarning: "seizure, mental health",
 			number: 3,
 			cues: [{
 				cueNumber: 1,
-				mediaURL: "https://overhear-winter-2019.s3.ca-central-1.amazonaws.com/03_Kaylyn_s_Story.mp3"
-			}]
-		},{
-			label: "Kokum's Story",
-			storyteller: "[no storyteller]",
-			thumbnailImageURL: "",
-			thumbnailImageA11yText: "",
-			locationDescription: "",
-			duration: "5:52",
-			description: "[no description]",
-			contentWarning: "[no content warning]",
-			number: 4,
-			cues: [{
-				cueNumber: 1,
-				mediaURL: "https://overhear-winter-2019.s3.ca-central-1.amazonaws.com/04_Kokum_s_Story.mp3"
-			}]
-		},{
-			label: "Rachel's Story",
-			storyteller: "[no storyteller]",
-			thumbnailImageURL: "",
-			thumbnailImageA11yText: "",
-			locationDescription: "",
-			duration: "5:15",
-			description: "[no description]",
-			contentWarning: "[no content warning]",
-			number: 5,
-			cues: [{
-				cueNumber: 1,
-				mediaURL: "https://overhear-winter-2019.s3.ca-central-1.amazonaws.com/05_Rachel_s_Story.mp3"
-			}]
-		},{
-			label: "Allison's Story",
-			storyteller: "[no storyteller]",
-			thumbnailImageURL: "",
-			thumbnailImageA11yText: "",
-			locationDescription: "",
-			duration: "5:15",
-			description: "[no description]",
-			contentWarning: "[no content warning]",
-			number: 6,
-			cues: [{
-				cueNumber: 1,
-				mediaURL: "https://overhear-winter-2019.s3.ca-central-1.amazonaws.com/06_Allison_s_Story.mp3"
-			}]
-		},{
-			label: "Sara's Story",
-			storyteller: "[no storyteller]",
-			thumbnailImageURL: "",
-			thumbnailImageA11yText: "",
-			locationDescription: "",
-			duration: "4:53",
-			description: "[no description]",
-			contentWarning: "[no content warning]",
-			number: 7,
-			cues: [{
-				cueNumber: 1,
-				mediaURL: "https://overhear-winter-2019.s3.ca-central-1.amazonaws.com/07_Sara_s_Story_and_curtain_call.mp3"
+				mediaURL: "https://overhear-winter-2019.s3.ca-central-1.amazonaws.com/Brunch.mp3"
 			}]
 		}],
 		storytellers: [{
-			name: "Braden Butler",
-			thumbnailImageURL: "media/images/braden-butler.jpg",
-			thumbnailImageA11yText: "a photo of actor Braden Butler",
+			name: "Benny Severight",
+			thumbnailImageURL: "",
+			thumbnailImageA11yText: "Actor Braden Butler",
 			bio: "Braden Butler was born and raised in Saskatoon, SK, Canada and moved to Edmonton, AB in the fall of 2017 to pursue a BFA in Acting at the University of Alberta. Recent theatre credits include <em>Wild Abandon</em> (Tough Choice Productions), <em>The Gooseberry</em> (Moplip Theatre/NextFest), <em>Ahunwar: The Devil’s Long Nap</em> (Night Canopy Theatre/2018 Edmonton Fringe), and <em>The Hot Baltimore</em>, The Misfit Vault, An Evening with Anon Chekhov, Midsummer Night’s Dream</em> (University of Alberta). He can be seen next (in Canada!) playing the role of Ken in John Logan’s <em>RED</em> at the 2019 Edmonton Fringe and in his first graduating year production as Buckingham in <em>Richard III</em>. He is thrilled to be a part of the creative ensemble with Overhear and for his work to be shared for the first time overseas. ",
 			links: [ 
 				"http://paypal.me/bradeninspace",

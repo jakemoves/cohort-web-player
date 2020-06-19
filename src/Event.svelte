@@ -54,7 +54,7 @@ h1 {
 }
 
 .event-description {
-	text-align: center;
+	/* text-align: center; */
 	font-size: 0.9rem;
 	line-height: 1.2rem;
 }
@@ -77,7 +77,7 @@ h1 {
 {/if}
 
 {#if event.eventDescription != ""}
-<p class="event-description">{event.eventDescription}</p>
+<p class="event-description">{@html event.eventDescription}</p>
 {/if}
 
 <!-- {#if !showStorytellerCard} -->
