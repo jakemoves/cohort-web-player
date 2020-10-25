@@ -25,6 +25,21 @@
 				mediaURL: "https://overhear-winter-2019.s3.ca-central-1.amazonaws.com/Spiders.mp3"
 			}]
 		},{
+			label: "Uncle",
+			storyteller: "Kaylynn Bear",
+			thumbnailImageURL: "media/images/Uncle.jpg",
+			thumbnailImageHeight: 80,
+			thumbnailImageA11yText: "",
+			locationDescription: "",
+			duration: "5:36",
+			description: "Is there someone you’re missing right now? Someone you’re waiting for? How do you take back time that has been stolen from you? Listen to this in your kitchen, while cooking. Take a look out the window when you can. Reflect on someone who is not in your life anymore.",
+			contentWarning: "prison, racial profiling",
+			number: 1,
+			cues: [{
+				cueNumber: 1,
+				mediaURL: "https://overhear-winter-2019.s3.ca-central-1.amazonaws.com/Uncle.mp3"
+			}]
+		},{
 			label: "Car Crash",
 			storyteller: "Allison Meckling",
 			thumbnailImageHeight: 68,
