@@ -22,7 +22,7 @@
 			number: 0,
 			cues: [{
 				cueNumber: 1,
-				mediaURL: "https://overhear-winter-2019.s3.ca-central-1.amazonaws.com/Spiders.mp3"
+				mediaURL: "https://circle-of-voices.s3.ca-central-1.amazonaws.com/Spiders.mp3"
 			}]
 		},{
 			label: "Uncle",
@@ -37,7 +37,7 @@
 			number: 1,
 			cues: [{
 				cueNumber: 1,
-				mediaURL: "https://overhear-winter-2019.s3.ca-central-1.amazonaws.com/Uncle.mp3"
+				mediaURL: "https://circle-of-voices.s3.ca-central-1.amazonaws.com/Uncle.mp3"
 			}]
 		},{
 			label: "Car Crash",
@@ -52,7 +52,7 @@
 			number: 2,
 			cues: [{
 				cueNumber: 1,
-				mediaURL: "https://overhear-winter-2019.s3.ca-central-1.amazonaws.com/CarCrash.mp3"
+				mediaURL: "https://circle-of-voices.s3.ca-central-1.amazonaws.com/CarCrash.mp3"
 			}]
 		},{
 			label: "Brunch with a Side of Seizures",
@@ -67,7 +67,7 @@
 			number: 3,
 			cues: [{
 				cueNumber: 1,
-				mediaURL: "https://overhear-winter-2019.s3.ca-central-1.amazonaws.com/Brunch.mp3"
+				mediaURL: "https://circle-of-voices.s3.ca-central-1.amazonaws.com/Brunch.mp3"
 			}]
 		}],
 		storytellers: [{
